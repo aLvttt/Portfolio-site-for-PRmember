@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Другие работы | Портфолио</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('index') }}" class="nav-link">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('index') }}#cases" class="nav-link">Кейсы</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('other_projects') }}" class="nav-link active">Другие работы</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('index') }}#contact" class="nav-link">Контакты</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <div class="main-content">
+        <!-- Герой секция для других проектов -->
+        <section class="other-projects-hero">
+            <!-- Анимированные декоративные элементы -->
+            <div class="animated-bg">
+                <div class="floating-shape shape-1 circle"></div>
+                <div class="floating-shape shape-3 diamond"></div>
+                <div class="floating-shape shape-5 square"></div>
+                <div class="floating-shape shape-7 wave"></div>
+                
+                <!-- Эмодзи элементы -->
+                <div class="floating-emoji emoji-1">🎨</div>
+                <div class="floating-emoji emoji-2">📱</div>
+                <div class="floating-emoji emoji-3">💼</div>
+                <div class="floating-emoji emoji-4">🚀</div>
+                
+                <!-- Декоративные линии и точки -->
+                <div class="floating-line line-1"></div>
+                <div class="floating-line line-2"></div>
+                <div class="floating-dot dot-1"></div>
+                <div class="floating-dot dot-2"></div>
+            </div>
+
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">Другие работы</h1>
+                    <p class="page-subtitle">Проекты, которыми я горжусь</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с проектами -->
+        <section class="other-projects-section">
+            <div class="container">
+                <div class="projects-grid">
+                    {% for project in projects %}
+                    <div class="project-card fade-in">
+                        <div class="project-icon">
+                            <i class="fas fa-{{ project.icon }}"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">{{ project.title }}</h3>
+                            <p class="project-description">{{ project.description }}</p>
+                            
+                            <div class="project-highlights">
+                                {% for highlight in project.highlights %}
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>{{ highlight }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            
+                            <div class="project-meta">
+                                <span class="project-category">{{ project.category }}</span>
+                                <span class="project-year">{{ project.year }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- CTA секция -->
+                <div class="projects-cta">
+                    <h2>Хотите увидеть больше?</h2>
+                    <p>Посмотрите мои основные кейсы с подробным описанием</p>
+                    <a href="{{ url_for('index') }}#cases" class="btn btn-primary">
+                        <i class="fas fa-briefcase"></i>
+                        Смотреть кейсы
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция контактов -->
+        <section class="contact-cta">
+            <div class="container">
+                <h2>Давайте создадим что-то удивительное вместе</h2>
+                <p>Готов обсудить ваш проект и найти лучшее решение</p>
+                <a href="{{ url_for('index') }}#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Связаться со мной
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 

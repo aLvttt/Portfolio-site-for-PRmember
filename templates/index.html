@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Реклама и PR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#cases" class="nav-link">Кейсы</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#other-works" class="nav-link">Другие работы</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Контакты</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <div class="main-content">
+        <!-- Главная секция -->
+        <section id="home" class="hero">
+            <!-- Анимированные декоративные элементы -->
+            <div class="animated-bg">
+                <!-- Основные формы -->
+                <div class="floating-shape shape-1 circle"></div>
+                <div class="floating-shape shape-4 square"></div>
+                <div class="floating-shape shape-6 diamond"></div>
+                <div class="floating-shape shape-8 wave"></div>
+                <div class="floating-shape shape-10 circle"></div>
+                <div class="floating-shape shape-12 diamond"></div>
+                
+                <!-- Эмодзи элементы для рекламы и PR -->
+                <div class="floating-emoji emoji-1">💡</div> <!-- Идея -->
+                <div class="floating-emoji emoji-2">📈</div> <!-- Рост/статистика -->
+                <div class="floating-emoji emoji-3">🎯</div> <!-- Цель/таргетинг -->
+                <div class="floating-emoji emoji-4">📢</div> <!-- Реклама/объявления -->
+                <div class="floating-emoji emoji-5">✨</div> <!-- Креатив/магия -->
+                <div class="floating-emoji emoji-6">🚀</div> <!-- Запуск/успех -->
+                
+                <!-- Анимированные линии -->
+                <div class="floating-line line-1"></div>
+                <div class="floating-line line-2"></div>
+                <div class="floating-line line-3"></div>
+                <div class="floating-line line-4"></div>
+                <div class="floating-line line-5"></div>
+                
+                <!-- Декоративные точки -->
+                <div class="floating-dot dot-1"></div>
+                <div class="floating-dot dot-2"></div>
+                <div class="floating-dot dot-3"></div>
+                <div class="floating-dot dot-4"></div>
+                <div class="floating-dot dot-5"></div>
+                <div class="floating-dot dot-6"></div>
+            </div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">Привет, я</span>
+                            <span class="title-name">{{ about.name }}</span>
+                            <span class="title-profession">{{ about.title }}</span>
+                        </h1>
+                        <p class="hero-description">
+                            {{ about.description }}
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="scrollToSection('cases')">
+                                <i class="fas fa-briefcase"></i>
+                                Мои кейсы
+                            </button>
+                            <button class="btn btn-secondary" onclick="scrollToSection('contact')">
+                                <i class="fas fa-envelope"></i>
+                                Связаться
+                            </button>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">{{ about.experience }}</span>
+                                <span class="stat-label">опыта</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">{{ about.projects }}</span>
+                                <span class="stat-label">проектов</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">{{ about.awards }}</span>
+                                <span class="stat-label">наград</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="visual-container">
+                            <div class="floating-elements">
+                                <div class="element element-1"><i class="fas fa-lightbulb"></i></div>
+                                <div class="element element-2"><i class="fas fa-chart-line"></i></div>
+                                <div class="element element-3"><i class="fas fa-bullhorn"></i></div>
+                                <div class="element element-4"><i class="fas fa-users"></i></div>
+                            </div>
+                            <div class="main-visual">
+                                <div class="avatar-placeholder">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- Разделитель -->
+        <div class="section-divider"></div>
+
+        <!-- Секция кейсов -->
+        <section id="cases" class="cases">
+            <!-- Интерактивные частицы -->
+            <div class="particles-container">
+                <div class="particle particle-1"></div>
+                <div class="particle particle-2"></div>
+                <div class="particle particle-3"></div>
+                <div class="particle particle-4"></div>
+                <div class="particle particle-5"></div>
+                <div class="particle particle-6"></div>
+                <div class="particle particle-7"></div>
+                
+                <!-- Эмодзи для секции кейсов -->
+                <div class="floating-emoji emoji-cases-1">🎨</div> <!-- Дизайн/креатив -->
+                <div class="floating-emoji emoji-cases-2">📊</div> <!-- Аналитика -->
+                <div class="floating-emoji emoji-cases-3">🏆</div> <!-- Успех/награды -->
+                <div class="floating-emoji emoji-cases-4">💼</div> <!-- Бизнес/работа -->
+            </div>
+            <div class="container">
+                <h2 class="section-title">Мои кейсы</h2>
+                <p class="section-subtitle">Каждый проект - это история успеха</p>
+                
+                <div class="cases-grid">
+                    {% for case in cases %}
+                    <a href="{{ url_for('case_detail', case_id=case.id) }}" class="case-card-link">
+                        <div class="case-card" data-case="{{ case.id }}">
+                        <div class="case-image">
+                            <div class="case-placeholder">
+                                    <i class="fas fa-{% if case.category == 'Брендинг' %}palette{% elif case.category == 'Digital' %}laptop{% elif case.category == 'PR' %}bullhorn{% else %}briefcase{% endif %}"></i>
+                            </div>
+                            <div class="case-overlay">
+                                    <span class="case-btn">Подробнее</span>
+                            </div>
+                        </div>
+                        <div class="case-content">
+                                <h3 class="case-title">{{ case.title }}</h3>
+                                <p class="case-description">{{ case.description }}</p>
+                            <div class="case-tags">
+                                    <span class="tag">{{ case.category }}</span>
+                                    <span class="tag">{{ case.year }}</span>
+                            </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                    </div>
+    </section>
+
+    <!-- Секция других работ -->
+    <section id="other-works" class="other-works">
+        <div class="container">
+            <h2 class="section-title">Другие работы</h2>
+            <p class="section-subtitle">Ещё больше интересных проектов</p>
+            
+            <div class="other-works-preview">
+                <a href="{{ url_for('other_projects') }}" class="work-preview-link">
+                    <div class="work-preview-card">
+                        <div class="work-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="work-content">
+                            <h3>SMM для ресторана</h3>
+                            <p>Ведение социальных сетей</p>
+                        </div>
+                        <div class="card-hover-indicator">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="{{ url_for('other_projects') }}" class="work-preview-link">
+                    <div class="work-preview-card">
+                        <div class="work-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="work-content">
+                            <h3>Event-мероприятия</h3>
+                            <p>Организация и продвижение</p>
+                        </div>
+                        <div class="card-hover-indicator">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="{{ url_for('other_projects') }}" class="work-preview-link">
+                    <div class="work-preview-card">
+                        <div class="work-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="work-content">
+                            <h3>Контент-стратегии</h3>
+                            <p>Для B2B сегмента</p>
+                        </div>
+                        <div class="card-hover-indicator">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="{{ url_for('other_projects') }}" class="work-preview-link">
+                    <div class="work-preview-card">
+                        <div class="work-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="work-content">
+                            <h3>Ребрендинг</h3>
+                            <p>Обновление айдентики</p>
+                        </div>
+                        <div class="card-hover-indicator">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="other-works-cta">
+                <a href="{{ url_for('other_projects') }}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-right"></i>
+                    Смотреть все проекты
+                </a>
+            </div>
+        </div>
+        
+        <!-- Декоративные элементы -->
+        <div class="floating-emoji" style="top: 20%; left: 5%; animation-delay: 2s; font-size: 1.8rem;">🎯</div>
+        <div class="floating-emoji" style="bottom: 30%; right: 10%; animation-delay: 7s; font-size: 1.6rem;">💎</div>
+        <div class="floating-emoji" style="top: 60%; left: 80%; animation-delay: 12s; font-size: 1.4rem;">⭐</div>
+        
+        <div class="floating-shape shape-works-1 circle" style="top: 15%; right: 8%; width: 40px; height: 40px; animation-delay: 4s;"></div>
+        <div class="floating-shape shape-works-2 diamond" style="bottom: 20%; left: 15%; width: 30px; height: 30px; animation-delay: 9s;"></div>
+        <div class="floating-shape shape-works-3 square" style="top: 70%; right: 25%; width: 25px; height: 25px; animation-delay: 14s;"></div>
+        
+        <div class="floating-dot dot-works-1" style="top: 35%; right: 5%; animation-delay: 6s;"></div>
+        <div class="floating-dot dot-works-2" style="bottom: 45%; left: 8%; animation-delay: 11s;"></div>
+    </section>
+
+    <!-- Разделитель -->
+    <div class="section-divider"></div>
+
+    <!-- Секция контактов -->
+    <section id="contact" class="contact">
+            <!-- Анимированные элементы фона -->
+            <div class="contact-bg-animation">
+                <div class="floating-icon icon-1"><i class="fas fa-envelope"></i></div>
+                <div class="floating-icon icon-2"><i class="fas fa-phone"></i></div>
+                <div class="floating-icon icon-3"><i class="fab fa-telegram"></i></div>
+                <div class="floating-icon icon-4"><i class="fas fa-heart"></i></div>
+                
+                <!-- Дополнительные декоративные элементы -->
+                <div class="floating-shape shape-contact-1 circle" style="top: 20%; left: 8%; width: 30px; height: 30px; animation-delay: 5s;"></div>
+                <div class="floating-shape shape-contact-2 diamond" style="bottom: 15%; right: 12%; width: 25px; height: 25px; animation-delay: 10s;"></div>
+                <div class="floating-dot dot-contact-1" style="top: 75%; left: 25%; animation-delay: 3s;"></div>
+                <div class="floating-dot dot-contact-2" style="top: 25%; right: 25%; animation-delay: 8s;"></div>
+                <div class="floating-line line-contact-1" style="top: 45%; left: 5%; width: 80px; height: 1px; animation-delay: 12s;"></div>
+                
+                <!-- Эмодзи для контактов -->
+                <div class="floating-emoji" style="top: 60%; left: 15%; animation-delay: 15s; font-size: 1.8rem;">🤝</div> <!-- Сотрудничество -->
+                <div class="floating-emoji" style="top: 35%; right: 8%; animation-delay: 20s; font-size: 1.6rem;">💬</div> <!-- Общение -->
+            </div>
+            <div class="container">
+                <h2 class="section-title">Давайте работать вместе</h2>
+                <p class="section-subtitle">Готов обсудить ваш проект</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>your.email@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 (xxx) xxx-xx-xx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-telegram"></i>
+                            <span>@yourtelegram</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
