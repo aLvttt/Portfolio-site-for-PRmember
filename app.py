@@ -18,101 +18,126 @@ PORTFOLIO_DATA = {
     'cases': [
         {
             'id': 1,
-            'title': 'Кампания "Новый взгляд"',
-            'description': 'Комплексная рекламная кампания для модного бренда',
-            'image': 'case1.jpg',
-            'category': 'Брендинг',
-            'year': '2023',
-            'client': 'Fashion Brand X',
-            'challenge': 'Необходимо было создать узнаваемый образ бренда и увеличить продажи на 30%',
-            'solution': 'Разработана комплексная стратегия включающая ребрендинг, digital-кампанию и PR-активности',
-            'results': ['Рост продаж на 45%', 'Увеличение узнаваемости бренда на 60%', 'Охват аудитории 2М+'],
-            'technologies': ['Photoshop', 'Illustrator', 'Google Ads', 'Facebook Ads'],
-            'images': ['case1-1.jpg', 'case1-2.jpg', 'case1-3.jpg']
+            'title': 'Structo - IT-продукт',
+            'description': 'Разработка маркетинговой стратегии для IT-стартапа',
+            'image': 'images/structo/frame3.png',
+            'category': 'Маркетинговая стратегия',
+            'year': '2025',
+            'client': 'Structo',
+            'challenge': 'Увеличить узнаваемость российского веб-сайта для преобразования текста в 3D-модели среди целевой аудитории',
+            'solution': 'Разработана комплексная маркетинговая стратегия с фокусом на образовательный контент, коллаборации с образовательными платформами и таргетированную рекламу',
+            'results': ['Прогноз: охват 50 000+ за первый месяц', 'Прогноз: увеличение регистраций на 20%', 'Прогноз: обучение 500+ пользователей'],
+            'technologies': ['Canva', 'Excel', 'PowerPoint', 'Конкурентный анализ', 'SWOT-анализ'],
+            'images': ['images/structo/frame3.png'],
+            'presentations': ['images/structo/presentation1.pdf', 'images/structo/presentation2.pdf'],
+            'theme': {
+                'primary': '#8B5CF6',
+                'secondary': '#3B82F6', 
+                'accent': '#EC4899',
+                'gradient': 'linear-gradient(135deg, #000000 0%, #1E1B4B 25%, #8B5CF6 50%, #3B82F6 75%, #EC4899 100%)',
+                'dark': '#000000',
+                'light': '#0F0F23'
+            }
         },
         {
             'id': 2,
-            'title': 'Digital-стратегия "Эко-будущее"',
-            'description': 'Цифровая кампания для экологической организации',
-            'image': 'case2.jpg',
-            'category': 'Digital',
-            'year': '2023',
-            'client': 'EcoFuture NGO',
-            'challenge': 'Повысить осведомленность о экологических проблемах среди молодежи',
-            'solution': 'Создана viral-кампания в социальных сетях с интерактивными элементами',
-            'results': ['Вирусный охват 5М+', 'Рост подписчиков на 200%', '50К новых волонтеров'],
-            'technologies': ['After Effects', 'TikTok Ads', 'Instagram', 'YouTube'],
-            'images': ['case2-1.jpg', 'case2-2.jpg', 'case2-3.jpg']
+            'title': 'CandleNur - Бренд свечей',
+            'description': 'Разработка визуального стиля и коммуникационного образа для бренда',
+            'image': 'images/candlenur/price/1.png',
+            'category': 'Брендинг',
+            'year': '2025',
+            'client': 'CandleNur',
+            'challenge': 'Сформировать визуальную айдентику бренда ручной работы и повысить узнаваемость',
+            'solution': 'Создан полный визуальный стиль, разработан сайт на Tilda, подготовлена контент-стратегия с упором на атмосферность и сторителлинг',
+            'results': ['Создан сайт candlenur.tilda.ws', 'Разработан полный визуальный стиль', 'Подготовлены материалы для продвижения'],
+            'technologies': ['Tilda', 'Canva', 'Figma', 'Визуальный дизайн', 'SWOT-анализ'],
+            'images': ['images/candlenur/price/1.png', 'images/candlenur/price/2.png', 'images/candlenur/price/3.png', 'images/candlenur/moodboard/moodboard.png', 'images/candlenur/memo/memo.png', 'images/candlenur/how-to-order/2.png'],
+            'theme': {
+                'primary': '#EA580C',
+                'secondary': '#FB923C', 
+                'accent': '#FED7AA',
+                'gradient': 'linear-gradient(135deg, #7C2D12 0%, #EA580C 30%, #FB923C 70%, #FED7AA 100%)',
+                'dark': '#431407',
+                'light': '#FFF7ED'
+            }
         },
         {
             'id': 3,
-            'title': 'PR-кампания "Инновации года"',
-            'description': 'Запуск нового технологического продукта',
-            'image': 'case3.jpg',
-            'category': 'PR',
+            'title': 'alttt. - Музыкальный проект',
+            'description': 'Разработка стратегии продвижения для музыканта',
+            'image': 'images/alttt/musician.jpg',
+            'category': 'Digital-продвижение',
             'year': '2024',
-            'client': 'TechStart Inc.',
-            'challenge': 'Представить инновационный продукт на конкурентном рынке',
-            'solution': 'Интегрированная PR-стратегия с медиа-турами и influencer-маркетингом',
-            'results': ['100+ публикаций в СМИ', 'Рост инвестиций на 300%', 'Награда "Продукт года"'],
-            'technologies': ['PR-tools', 'Media monitoring', 'Influencer platforms'],
-            'images': ['case3-1.jpg', 'case3-2.jpg', 'case3-3.jpg']
+            'client': 'alttt.',
+            'challenge': 'Привлечь новую аудиторию и успешно запустить релиз нового трека',
+            'solution': 'Разработана мультиканальная стратегия продвижения с фокусом на TikTok, Instagram и музыкальные платформы',
+            'results': ['Прогноз: рост аудитории на 15% в TikTok', 'Стратегия для 5+ платформ', 'План контент-маркетинга'],
+            'technologies': ['Canva', 'Контент-стратегия', 'KPI планирование', 'Аналитика аудитории'],
+            'images': ['images/alttt/musician.jpg'],
+            'theme': {
+                'primary': '#E11D48',
+                'secondary': '#F43F5E', 
+                'accent': '#FDA4AF',
+                'gradient': 'linear-gradient(135deg, #881337 0%, #E11D48 30%, #F43F5E 70%, #FDA4AF 100%)',
+                'dark': '#4C0519',
+                'light': '#FFF1F2'
+            }
         }
     ],
     'other_projects': [
         {
             'id': 1,
-            'title': 'SMM для ресторана "Вкусный мир"',
-            'description': 'Ведение социальных сетей и создание контента для семейного ресторана',
-            'category': 'SMM',
-            'year': '2023',
-            'highlights': ['Рост подписчиков на 150%', 'Увеличение бронирований через соцсети на 80%', 'Создано 200+ постов'],
-            'icon': 'utensils'
+            'title': 'PR-стратегия для Almond Crew',
+            'description': 'Разработка PR и маркетинговой стратегии для eco-friendly бренда женской одежды',
+            'category': 'PR-стратегия',
+            'year': '2024',
+            'highlights': ['SWOT и PEST-анализ', 'Медиапланирование', 'Event-маркетинг', 'Комплексный подход к продвижению'],
+            'icon': 'leaf'
         },
         {
             'id': 2,
-            'title': 'Event "Ночь искусств 2023"',
-            'description': 'Организация и продвижение городского культурного мероприятия',
-            'category': 'Event',
-            'year': '2023',
-            'highlights': ['5000+ посетителей', '20 площадок', 'Охват в СМИ 500К+'],
-            'icon': 'palette'
+            'title': 'Анализ коммуникаций Сбербанка',
+            'description': 'Университетский проект по анализу рекламной стратегии и ребрендинга ПАО «Сбербанк»',
+            'category': 'Аналитика',
+            'year': '2024',
+            'highlights': ['Анализ ребрендинга 2020', 'Исследование каналов продвижения', 'Оценка корпоративных ценностей'],
+            'icon': 'chart-line'
         },
         {
             'id': 3,
-            'title': 'Контент-стратегия для IT-стартапа',
-            'description': 'Разработка и реализация контент-плана для B2B сегмента',
-            'category': 'Content',
+            'title': 'Работы в Excel',
+            'description': 'Создание медиапланов и аналитических таблиц для различных проектов',
+            'category': 'Аналитика',
             'year': '2024',
-            'highlights': ['50 лид-магнитов', 'Рост органического трафика на 200%', '30+ публикаций в индустриальных СМИ'],
-            'icon': 'laptop-code'
+            'highlights': ['Медиапланы для радиостанций', 'Аналитические таблицы', 'Работа с большими данными'],
+            'icon': 'file-excel'
         },
         {
             'id': 4,
-            'title': 'Ребрендинг сети фитнес-клубов',
-            'description': 'Полное обновление визуальной идентичности и коммуникационной стратегии',
-            'category': 'Брендинг',
+            'title': 'Работы в Figma',
+            'description': 'Создание дизайн-макетов и визуальных материалов',
+            'category': 'Дизайн',
             'year': '2024',
-            'highlights': ['Новый логотип и айдентика', 'Рост узнаваемости на 70%', 'Увеличение продаж абонементов на 40%'],
-            'icon': 'dumbbell'
+            'highlights': ['UI/UX дизайн', 'Визуальное оформление', 'Прототипирование'],
+            'icon': 'palette'
         }
     ],
     'about': {
-        'name': 'Ваше Имя',
-        'title': 'Специалист по рекламе и PR',
-        'description': 'Создаю эффективные рекламные кампании и PR-стратегии, которые помогают брендам достигать своих целей и выделяться на рынке.',
-        'experience': '5+ лет',
-        'projects': '50+',
-        'awards': '10+',
+        'name': 'Анастасия',
+        'title': 'Начинающий специалист по рекламе и PR',
+        'description': 'Учусь создавать эффективные рекламные кампании и PR-стратегии, которые помогают брендам достигать своих целей и выделяться на рынке.',
+        'experience': 'Начинающий',
+        'projects': '7+',
+        'awards': 'В процессе',
         'skills': [
-            'Стратегическое планирование',
-            'Креативные концепции',
-            'Digital-маркетинг',
-            'PR и медиа-отношения',
+            'Маркетинговый анализ',
+            'Визуальный дизайн',
+            'Контент-стратегия',
+            'SWOT-анализ',
             'Брендинг',
-            'Контент-маркетинг',
-            'Аналитика и метрики',
-            'Управление проектами'
+            'Работа в Canva, Figma',
+            'Создание сайтов на Tilda',
+            'Excel и аналитика'
         ]
     }
 }
@@ -239,6 +264,44 @@ def other_projects():
     return render_template('other_projects.html', 
                          projects=PORTFOLIO_DATA['other_projects'],
                          about=PORTFOLIO_DATA['about'])
+
+@app.route('/test-images')
+def test_images():
+    """Тестовая страница для проверки изображений"""
+    import os
+    images_path = os.path.join(app.static_folder, 'images')
+    images = []
+    
+    # Проверяем существование папки
+    if os.path.exists(images_path):
+        for root, dirs, files in os.walk(images_path):
+            for file in files:
+                if file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
+                    rel_path = os.path.relpath(os.path.join(root, file), app.static_folder)
+                    images.append(rel_path.replace('\\', '/'))
+    
+    html = f"""
+    <html>
+    <head><title>Test Images</title></head>
+    <body>
+        <h1>Static folder: {app.static_folder}</h1>
+        <h2>Images path: {images_path}</h2>
+        <h2>Found {len(images)} images:</h2>
+        <ul>
+    """
+    
+    for img in images:
+        url = url_for('static', filename=img)
+        html += f'<li>{img} - <a href="{url}">{url}</a><br><img src="{url}" style="max-width: 200px; margin: 10px;"></li>'
+    
+    html += "</ul></body></html>"
+    return html
+
+@app.route('/test-static')
+def test_static():
+    """Тестовая страница для проверки статических файлов"""
+    with open('test_image.html', 'r', encoding='utf-8') as f:
+        return f.read()
 
 @app.errorhandler(404)
 def not_found(error):

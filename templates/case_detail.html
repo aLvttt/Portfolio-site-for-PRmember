@@ -5,12 +5,940 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ case.title }} | Портфолио</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='case-themes.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Динамические CSS переменные для каждого кейса -->
+    <style>
+        :root {
+            --case-primary: {{ case.theme.primary }};
+            --case-secondary: {{ case.theme.secondary }};
+            --case-accent: {{ case.theme.accent }};
+            --case-gradient: {{ case.theme.gradient }};
+            --case-dark: {{ case.theme.dark }};
+            --case-light: {{ case.theme.light }};
+        }
+    </style>
 </head>
-<body>
+
+<body class="case-page case-{{ case.client.lower().replace(' ', '-').replace('.', '') }}">
+    <!-- Плавающие декоративные элементы -->
+    {% if case.client == 'Structo' %}
+        <div class="floating-decorations structo-decorations">
+            <div class="floating-element element-1">
+                <div class="tech-symbol">{ }</div>
+            </div>
+            <div class="floating-element element-2">
+                <div class="tech-symbol">&lt;/&gt;</div>
+            </div>
+            <div class="floating-element element-3">
+                <div class="tech-symbol">⚡</div>
+            </div>
+            <div class="floating-element element-4">
+                <div class="tech-symbol">🤖</div>
+            </div>
+            <div class="floating-element element-5">
+                <div class="tech-symbol">💻</div>
+            </div>
+            <div class="floating-element element-6">
+                <div class="tech-symbol">⚙️</div>
+            </div>
+            <div class="floating-element element-7">
+                <div class="tech-symbol">🔮</div>
+            </div>
+            <div class="floating-element element-8">
+                <div class="tech-symbol">🧠</div>
+            </div>
+            <div class="floating-element element-9">
+                <div class="tech-symbol">⭐</div>
+            </div>
+            <div class="floating-element element-10">
+                <div class="tech-symbol">🚀</div>
+            </div>
+            <div class="floating-element element-11">
+                <div class="tech-symbol">💡</div>
+            </div>
+            <div class="floating-element element-12">
+                <div class="tech-symbol">🔧</div>
+            </div>
+            <div class="floating-element element-13">
+                <div class="tech-symbol">🔬</div>
+            </div>
+            <div class="floating-element element-14">
+                <div class="tech-symbol">📊</div>
+            </div>
+            <div class="floating-element element-15">
+                <div class="tech-symbol">🎯</div>
+            </div>
+            <div class="floating-element element-16">
+                <div class="tech-symbol">🌐</div>
+            </div>
+            <div class="floating-element element-17">
+                <div class="tech-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-18">
+                <div class="tech-symbol">∞</div>
+            </div>
+            <div class="floating-element element-19">
+                <div class="tech-symbol">◆</div>
+            </div>
+            <div class="floating-element element-20">
+                <div class="tech-symbol">▲</div>
+            </div>
+            <div class="floating-element element-21">
+                <div class="tech-symbol">●</div>
+            </div>
+            <div class="floating-element element-22">
+                <div class="tech-symbol">■</div>
+            </div>
+            <div class="floating-element element-23">
+                <div class="tech-symbol">◇</div>
+            </div>
+            <div class="floating-element element-24">
+                <div class="tech-symbol">△</div>
+            </div>
+            <div class="floating-element element-25">
+                <div class="tech-symbol">○</div>
+            </div>
+            <div class="floating-element element-26">
+                <div class="tech-symbol">{ }</div>
+            </div>
+            <div class="floating-element element-27">
+                <div class="tech-symbol">&lt;/&gt;</div>
+            </div>
+            <div class="floating-element element-28">
+                <div class="tech-symbol">⚡</div>
+            </div>
+            <div class="floating-element element-29">
+                <div class="tech-symbol">🤖</div>
+            </div>
+            <div class="floating-element element-30">
+                <div class="tech-symbol">💻</div>
+            </div>
+            <div class="floating-element element-31">
+                <div class="tech-symbol">⚙️</div>
+            </div>
+            <div class="floating-element element-32">
+                <div class="tech-symbol">🔮</div>
+            </div>
+            <div class="floating-element element-33">
+                <div class="tech-symbol">🧠</div>
+            </div>
+            <div class="floating-element element-34">
+                <div class="tech-symbol">⭐</div>
+            </div>
+            <div class="floating-element element-35">
+                <div class="tech-symbol">🚀</div>
+            </div>
+            <div class="floating-element element-36">
+                <div class="tech-symbol">💡</div>
+            </div>
+            <div class="floating-element element-37">
+                <div class="tech-symbol">🔧</div>
+            </div>
+            <div class="floating-element element-38">
+                <div class="tech-symbol">🔬</div>
+            </div>
+            <div class="floating-element element-39">
+                <div class="tech-symbol">📊</div>
+            </div>
+            <div class="floating-element element-40">
+                <div class="tech-symbol">🎯</div>
+            </div>
+            <div class="floating-element element-41">
+                <div class="tech-symbol">🌐</div>
+            </div>
+            <div class="floating-element element-42">
+                <div class="tech-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-43">
+                <div class="tech-symbol">∞</div>
+            </div>
+            <div class="floating-element element-44">
+                <div class="tech-symbol">◆</div>
+            </div>
+            <div class="floating-element element-45">
+                <div class="tech-symbol">▲</div>
+            </div>
+            <div class="floating-element element-46">
+                <div class="tech-symbol">●</div>
+            </div>
+            <div class="floating-element element-47">
+                <div class="tech-symbol">■</div>
+            </div>
+            <div class="floating-element element-48">
+                <div class="tech-symbol">◇</div>
+            </div>
+            <div class="floating-element element-49">
+                <div class="tech-symbol">△</div>
+            </div>
+            <div class="floating-element element-50">
+                <div class="tech-symbol">○</div>
+            </div>
+            <div class="floating-element element-51">
+                <div class="tech-symbol">⚡</div>
+            </div>
+            <div class="floating-element element-52">
+                <div class="tech-symbol">🤖</div>
+            </div>
+            <div class="floating-element element-53">
+                <div class="tech-symbol">💻</div>
+            </div>
+            <div class="floating-element element-54">
+                <div class="tech-symbol">⚙️</div>
+            </div>
+            <div class="floating-element element-55">
+                <div class="tech-symbol">🔮</div>
+            </div>
+            <div class="floating-element element-56">
+                <div class="tech-symbol">🧠</div>
+            </div>
+            <div class="floating-element element-57">
+                <div class="tech-symbol">⭐</div>
+            </div>
+            <div class="floating-element element-58">
+                <div class="tech-symbol">🚀</div>
+            </div>
+            <div class="floating-element element-59">
+                <div class="tech-symbol">💡</div>
+            </div>
+            <div class="floating-element element-60">
+                <div class="tech-symbol">🔧</div>
+            </div>
+            <div class="floating-element element-61">
+                <div class="tech-symbol">🔬</div>
+            </div>
+            <div class="floating-element element-62">
+                <div class="tech-symbol">📊</div>
+            </div>
+            <div class="floating-element element-63">
+                <div class="tech-symbol">🎯</div>
+            </div>
+            <div class="floating-element element-64">
+                <div class="tech-symbol">🌐</div>
+            </div>
+            <div class="floating-element element-65">
+                <div class="tech-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-66">
+                <div class="tech-symbol">∞</div>
+            </div>
+            <div class="floating-element element-67">
+                <div class="tech-symbol">◆</div>
+            </div>
+            <div class="floating-element element-68">
+                <div class="tech-symbol">▲</div>
+            </div>
+            <div class="floating-element element-69">
+                <div class="tech-symbol">●</div>
+            </div>
+            <div class="floating-element element-70">
+                <div class="tech-symbol">■</div>
+            </div>
+            <div class="floating-element element-71">
+                <div class="tech-symbol">◇</div>
+            </div>
+            <div class="floating-element element-72">
+                <div class="tech-symbol">△</div>
+            </div>
+            <div class="floating-element element-73">
+                <div class="tech-symbol">○</div>
+            </div>
+            <div class="floating-element element-74">
+                <div class="tech-symbol">{ }</div>
+            </div>
+            <div class="floating-element element-75">
+                <div class="tech-symbol">&lt;/&gt;</div>
+            </div>
+            <div class="floating-element element-76">
+                <div class="tech-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-77">
+                <div class="tech-symbol">∞</div>
+            </div>
+            <div class="floating-element element-78">
+                <div class="tech-symbol">◆</div>
+            </div>
+            <div class="floating-element element-79">
+                <div class="tech-symbol">▲</div>
+            </div>
+            <div class="floating-element element-80">
+                <div class="tech-symbol">●</div>
+            </div>
+            <div class="floating-element element-81">
+                <div class="tech-symbol">■</div>
+            </div>
+            <div class="floating-element element-82">
+                <div class="tech-symbol">◇</div>
+            </div>
+            <div class="floating-element element-83">
+                <div class="tech-symbol">△</div>
+            </div>
+            <div class="floating-element element-84">
+                <div class="tech-symbol">○</div>
+            </div>
+            <div class="floating-element element-85">
+                <div class="tech-symbol">🚀</div>
+            </div>
+            <div class="floating-element element-86">
+                <div class="tech-symbol">💡</div>
+            </div>
+            <div class="floating-element element-87">
+                <div class="tech-symbol">🔧</div>
+            </div>
+            <div class="floating-element element-88">
+                <div class="tech-symbol">🔬</div>
+            </div>
+            <div class="floating-element element-89">
+                <div class="tech-symbol">📊</div>
+            </div>
+            <div class="floating-element element-90">
+                <div class="tech-symbol">🎯</div>
+            </div>
+            <div class="floating-element element-91">
+                <div class="tech-symbol">🌐</div>
+            </div>
+            <div class="floating-element element-92">
+                <div class="tech-symbol">🔮</div>
+            </div>
+            <div class="floating-element element-93">
+                <div class="tech-symbol">🧠</div>
+            </div>
+            <div class="floating-element element-94">
+                <div class="tech-symbol">⭐</div>
+            </div>
+            <div class="floating-element element-95">
+                <div class="tech-symbol">⚡</div>
+            </div>
+            <div class="floating-element element-96">
+                <div class="tech-symbol">🤖</div>
+            </div>
+            <div class="floating-element element-97">
+                <div class="tech-symbol">💻</div>
+            </div>
+            <div class="floating-element element-98">
+                <div class="tech-symbol">⚙️</div>
+            </div>
+            <div class="floating-element element-99">
+                <div class="tech-symbol">{ }</div>
+            </div>
+            <div class="floating-element element-100">
+                <div class="tech-symbol">&lt;/&gt;</div>
+            </div>
+        </div>
+    {% elif case.client == 'CandleNur' %}
+        <div class="floating-decorations candlenur-decorations">
+            <div class="floating-element element-1">
+                <div class="candle-symbol">🕯️</div>
+            </div>
+            <div class="floating-element element-2">
+                <div class="candle-symbol">✨</div>
+            </div>
+            <div class="floating-element element-3">
+                <div class="candle-symbol">🌿</div>
+            </div>
+            <div class="floating-element element-4">
+                <div class="candle-symbol">🏠</div>
+            </div>
+            <div class="floating-element element-5">
+                <div class="candle-symbol">💫</div>
+            </div>
+            <div class="floating-element element-6">
+                <div class="candle-symbol">🤲</div>
+            </div>
+            <div class="floating-element element-7">
+                <div class="candle-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-8">
+                <div class="candle-symbol">🌸</div>
+            </div>
+            <div class="floating-element element-9">
+                <div class="candle-symbol">💝</div>
+            </div>
+            <div class="floating-element element-10">
+                <div class="candle-symbol">🌺</div>
+            </div>
+            <div class="floating-element element-11">
+                <div class="candle-symbol">🎁</div>
+            </div>
+            <div class="floating-element element-12">
+                <div class="candle-symbol">🌻</div>
+            </div>
+            <div class="floating-element element-13">
+                <div class="candle-symbol">💐</div>
+            </div>
+            <div class="floating-element element-14">
+                <div class="candle-symbol">🌹</div>
+            </div>
+            <div class="floating-element element-15">
+                <div class="candle-symbol">🌼</div>
+            </div>
+            <div class="floating-element element-16">
+                <div class="candle-symbol">🍃</div>
+            </div>
+            <div class="floating-element element-17">
+                <div class="candle-symbol">🌷</div>
+            </div>
+            <div class="floating-element element-18">
+                <div class="candle-symbol">🌱</div>
+            </div>
+            <div class="floating-element element-19">
+                <div class="candle-symbol">🧘‍♀️</div>
+            </div>
+            <div class="floating-element element-20">
+                <div class="candle-symbol">🍯</div>
+            </div>
+            <div class="floating-element element-21">
+                <div class="candle-symbol">🌾</div>
+            </div>
+            <div class="floating-element element-22">
+                <div class="candle-symbol">🦋</div>
+            </div>
+            <div class="floating-element element-23">
+                <div class="candle-symbol">🌙</div>
+            </div>
+            <div class="floating-element element-24">
+                <div class="candle-symbol">☘️</div>
+            </div>
+            <div class="floating-element element-25">
+                <div class="candle-symbol">🌰</div>
+            </div>
+            <div class="floating-element element-26">
+                <div class="candle-symbol">🍂</div>
+            </div>
+            <div class="floating-element element-27">
+                <div class="candle-symbol">🌲</div>
+            </div>
+            <div class="floating-element element-28">
+                <div class="candle-symbol">🌳</div>
+            </div>
+            <div class="floating-element element-29">
+                <div class="candle-symbol">🌴</div>
+            </div>
+            <div class="floating-element element-30">
+                <div class="candle-symbol">🌵</div>
+            </div>
+            <div class="floating-element element-31">
+                <div class="candle-symbol">🕯️</div>
+            </div>
+            <div class="floating-element element-32">
+                <div class="candle-symbol">✨</div>
+            </div>
+            <div class="floating-element element-33">
+                <div class="candle-symbol">🌿</div>
+            </div>
+            <div class="floating-element element-34">
+                <div class="candle-symbol">🏠</div>
+            </div>
+            <div class="floating-element element-35">
+                <div class="candle-symbol">💫</div>
+            </div>
+            <div class="floating-element element-36">
+                <div class="candle-symbol">🤲</div>
+            </div>
+            <div class="floating-element element-37">
+                <div class="candle-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-38">
+                <div class="candle-symbol">🌸</div>
+            </div>
+            <div class="floating-element element-39">
+                <div class="candle-symbol">💝</div>
+            </div>
+            <div class="floating-element element-40">
+                <div class="candle-symbol">🌺</div>
+            </div>
+            <div class="floating-element element-41">
+                <div class="candle-symbol">🎁</div>
+            </div>
+            <div class="floating-element element-42">
+                <div class="candle-symbol">🌻</div>
+            </div>
+            <div class="floating-element element-43">
+                <div class="candle-symbol">💐</div>
+            </div>
+            <div class="floating-element element-44">
+                <div class="candle-symbol">🌹</div>
+            </div>
+            <div class="floating-element element-45">
+                <div class="candle-symbol">🌼</div>
+            </div>
+            <div class="floating-element element-46">
+                <div class="candle-symbol">🍃</div>
+            </div>
+            <div class="floating-element element-47">
+                <div class="candle-symbol">🌷</div>
+            </div>
+            <div class="floating-element element-48">
+                <div class="candle-symbol">🌱</div>
+            </div>
+            <div class="floating-element element-49">
+                <div class="candle-symbol">🧘‍♀️</div>
+            </div>
+            <div class="floating-element element-50">
+                <div class="candle-symbol">🍯</div>
+            </div>
+            <div class="floating-element element-51">
+                <div class="candle-symbol">🌾</div>
+            </div>
+            <div class="floating-element element-52">
+                <div class="candle-symbol">🦋</div>
+            </div>
+            <div class="floating-element element-53">
+                <div class="candle-symbol">🌙</div>
+            </div>
+            <div class="floating-element element-54">
+                <div class="candle-symbol">☘️</div>
+            </div>
+            <div class="floating-element element-55">
+                <div class="candle-symbol">🌰</div>
+            </div>
+            <div class="floating-element element-56">
+                <div class="candle-symbol">🍂</div>
+            </div>
+            <div class="floating-element element-57">
+                <div class="candle-symbol">🌲</div>
+            </div>
+            <div class="floating-element element-58">
+                <div class="candle-symbol">🌳</div>
+            </div>
+            <div class="floating-element element-59">
+                <div class="candle-symbol">🌴</div>
+            </div>
+            <div class="floating-element element-60">
+                <div class="candle-symbol">🌵</div>
+            </div>
+            <div class="floating-element element-61">
+                <div class="candle-symbol">🕯️</div>
+            </div>
+            <div class="floating-element element-62">
+                <div class="candle-symbol">✨</div>
+            </div>
+            <div class="floating-element element-63">
+                <div class="candle-symbol">🌿</div>
+            </div>
+            <div class="floating-element element-64">
+                <div class="candle-symbol">🏠</div>
+            </div>
+            <div class="floating-element element-65">
+                <div class="candle-symbol">💫</div>
+            </div>
+            <div class="floating-element element-66">
+                <div class="candle-symbol">🤲</div>
+            </div>
+            <div class="floating-element element-67">
+                <div class="candle-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-68">
+                <div class="candle-symbol">🌸</div>
+            </div>
+            <div class="floating-element element-69">
+                <div class="candle-symbol">💝</div>
+            </div>
+            <div class="floating-element element-70">
+                <div class="candle-symbol">🌺</div>
+            </div>
+            <div class="floating-element element-71">
+                <div class="candle-symbol">🎁</div>
+            </div>
+            <div class="floating-element element-72">
+                <div class="candle-symbol">🌻</div>
+            </div>
+            <div class="floating-element element-73">
+                <div class="candle-symbol">💐</div>
+            </div>
+            <div class="floating-element element-74">
+                <div class="candle-symbol">🌹</div>
+            </div>
+            <div class="floating-element element-75">
+                <div class="candle-symbol">🌼</div>
+            </div>
+            <div class="floating-element element-76">
+                <div class="candle-symbol">🍃</div>
+            </div>
+            <div class="floating-element element-77">
+                <div class="candle-symbol">🌷</div>
+            </div>
+            <div class="floating-element element-78">
+                <div class="candle-symbol">🌱</div>
+            </div>
+            <div class="floating-element element-79">
+                <div class="candle-symbol">🧘‍♀️</div>
+            </div>
+            <div class="floating-element element-80">
+                <div class="candle-symbol">🍯</div>
+            </div>
+            <div class="floating-element element-81">
+                <div class="candle-symbol">🌾</div>
+            </div>
+            <div class="floating-element element-82">
+                <div class="candle-symbol">🦋</div>
+            </div>
+            <div class="floating-element element-83">
+                <div class="candle-symbol">🌙</div>
+            </div>
+            <div class="floating-element element-84">
+                <div class="candle-symbol">☘️</div>
+            </div>
+            <div class="floating-element element-85">
+                <div class="candle-symbol">🌰</div>
+            </div>
+            <div class="floating-element element-86">
+                <div class="candle-symbol">🍂</div>
+            </div>
+            <div class="floating-element element-87">
+                <div class="candle-symbol">🌲</div>
+            </div>
+            <div class="floating-element element-88">
+                <div class="candle-symbol">🌳</div>
+            </div>
+            <div class="floating-element element-89">
+                <div class="candle-symbol">🌴</div>
+            </div>
+            <div class="floating-element element-90">
+                <div class="candle-symbol">🌵</div>
+            </div>
+            <div class="floating-element element-91">
+                <div class="candle-symbol">🕯️</div>
+            </div>
+            <div class="floating-element element-92">
+                <div class="candle-symbol">✨</div>
+            </div>
+            <div class="floating-element element-93">
+                <div class="candle-symbol">🌿</div>
+            </div>
+            <div class="floating-element element-94">
+                <div class="candle-symbol">🏠</div>
+            </div>
+            <div class="floating-element element-95">
+                <div class="candle-symbol">💫</div>
+            </div>
+            <div class="floating-element element-96">
+                <div class="candle-symbol">🤲</div>
+            </div>
+            <div class="floating-element element-97">
+                <div class="candle-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-98">
+                <div class="candle-symbol">🌸</div>
+            </div>
+            <div class="floating-element element-99">
+                <div class="candle-symbol">💝</div>
+            </div>
+            <div class="floating-element element-100">
+                <div class="candle-symbol">🌺</div>
+            </div>
+        </div>
+    {% elif case.client == 'alttt.' %}
+        <div class="floating-decorations alttt-decorations">
+            <div class="floating-element element-1">
+                <div class="music-symbol">♪</div>
+            </div>
+            <div class="floating-element element-2">
+                <div class="music-symbol">♫</div>
+            </div>
+            <div class="floating-element element-3">
+                <div class="music-symbol">🎵</div>
+            </div>
+            <div class="floating-element element-4">
+                <div class="music-symbol">🎶</div>
+            </div>
+            <div class="floating-element element-5">
+                <div class="music-symbol">🎧</div>
+            </div>
+            <div class="floating-element element-6">
+                <div class="music-symbol">🎤</div>
+            </div>
+            <div class="floating-element element-7">
+                <div class="music-symbol">🎸</div>
+            </div>
+            <div class="floating-element element-8">
+                <div class="music-symbol">🎹</div>
+            </div>
+            <div class="floating-element element-9">
+                <div class="music-symbol">🥁</div>
+            </div>
+            <div class="floating-element element-10">
+                <div class="music-symbol">🎺</div>
+            </div>
+            <div class="floating-element element-11">
+                <div class="music-symbol">🎼</div>
+            </div>
+            <div class="floating-element element-12">
+                <div class="music-symbol">🎭</div>
+            </div>
+            <div class="floating-element element-13">
+                <div class="music-symbol">🌟</div>
+            </div>
+            <div class="floating-element element-14">
+                <div class="music-symbol">💫</div>
+            </div>
+            <div class="floating-element element-15">
+                <div class="music-symbol">🔊</div>
+            </div>
+            <div class="floating-element element-16">
+                <div class="music-symbol">🎨</div>
+            </div>
+            <div class="floating-element element-17">
+                <div class="music-symbol">🎪</div>
+            </div>
+            <div class="floating-element element-18">
+                <div class="music-symbol">🎯</div>
+            </div>
+            <div class="floating-element element-19">
+                <div class="music-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-20">
+                <div class="music-symbol">⚡</div>
+            </div>
+            <div class="floating-element element-21">
+                <div class="music-symbol">🌈</div>
+            </div>
+            <div class="floating-element element-22">
+                <div class="music-symbol">🎊</div>
+            </div>
+            <div class="floating-element element-23">
+                <div class="music-symbol">💎</div>
+            </div>
+            <div class="floating-element element-24">
+                <div class="music-symbol">🚀</div>
+            </div>
+            <div class="floating-element element-25">
+                <div class="music-symbol">✨</div>
+            </div>
+            <div class="floating-element element-26">
+                <div class="music-symbol">🎀</div>
+            </div>
+            <div class="floating-element element-27">
+                <div class="music-symbol">🎈</div>
+            </div>
+            <div class="floating-element element-28">
+                <div class="music-symbol">🎉</div>
+            </div>
+            <div class="floating-element element-29">
+                <div class="music-symbol">🎮</div>
+            </div>
+            <div class="floating-element element-30">
+                <div class="music-symbol">🎲</div>
+            </div>
+            <div class="floating-element element-31">
+                <div class="music-symbol">♪</div>
+            </div>
+            <div class="floating-element element-32">
+                <div class="music-symbol">♫</div>
+            </div>
+            <div class="floating-element element-33">
+                <div class="music-symbol">🎵</div>
+            </div>
+            <div class="floating-element element-34">
+                <div class="music-symbol">🎶</div>
+            </div>
+            <div class="floating-element element-35">
+                <div class="music-symbol">🎧</div>
+            </div>
+            <div class="floating-element element-36">
+                <div class="music-symbol">🎤</div>
+            </div>
+            <div class="floating-element element-37">
+                <div class="music-symbol">🎸</div>
+            </div>
+            <div class="floating-element element-38">
+                <div class="music-symbol">🎹</div>
+            </div>
+            <div class="floating-element element-39">
+                <div class="music-symbol">🥁</div>
+            </div>
+            <div class="floating-element element-40">
+                <div class="music-symbol">🎺</div>
+            </div>
+            <div class="floating-element element-41">
+                <div class="music-symbol">🎼</div>
+            </div>
+            <div class="floating-element element-42">
+                <div class="music-symbol">🎭</div>
+            </div>
+            <div class="floating-element element-43">
+                <div class="music-symbol">🌟</div>
+            </div>
+            <div class="floating-element element-44">
+                <div class="music-symbol">💫</div>
+            </div>
+            <div class="floating-element element-45">
+                <div class="music-symbol">🔊</div>
+            </div>
+            <div class="floating-element element-46">
+                <div class="music-symbol">🎨</div>
+            </div>
+            <div class="floating-element element-47">
+                <div class="music-symbol">🎪</div>
+            </div>
+            <div class="floating-element element-48">
+                <div class="music-symbol">🎯</div>
+            </div>
+            <div class="floating-element element-49">
+                <div class="music-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-50">
+                <div class="music-symbol">⚡</div>
+            </div>
+            <div class="floating-element element-51">
+                <div class="music-symbol">🌈</div>
+            </div>
+            <div class="floating-element element-52">
+                <div class="music-symbol">🎊</div>
+            </div>
+            <div class="floating-element element-53">
+                <div class="music-symbol">💎</div>
+            </div>
+            <div class="floating-element element-54">
+                <div class="music-symbol">🚀</div>
+            </div>
+            <div class="floating-element element-55">
+                <div class="music-symbol">✨</div>
+            </div>
+            <div class="floating-element element-56">
+                <div class="music-symbol">🎀</div>
+            </div>
+            <div class="floating-element element-57">
+                <div class="music-symbol">🎈</div>
+            </div>
+            <div class="floating-element element-58">
+                <div class="music-symbol">🎉</div>
+            </div>
+            <div class="floating-element element-59">
+                <div class="music-symbol">🎮</div>
+            </div>
+            <div class="floating-element element-60">
+                <div class="music-symbol">🎲</div>
+            </div>
+            <div class="floating-element element-61">
+                <div class="music-symbol">♪</div>
+            </div>
+            <div class="floating-element element-62">
+                <div class="music-symbol">♫</div>
+            </div>
+            <div class="floating-element element-63">
+                <div class="music-symbol">🎵</div>
+            </div>
+            <div class="floating-element element-64">
+                <div class="music-symbol">🎶</div>
+            </div>
+            <div class="floating-element element-65">
+                <div class="music-symbol">🎧</div>
+            </div>
+            <div class="floating-element element-66">
+                <div class="music-symbol">🎤</div>
+            </div>
+            <div class="floating-element element-67">
+                <div class="music-symbol">🎸</div>
+            </div>
+            <div class="floating-element element-68">
+                <div class="music-symbol">🎹</div>
+            </div>
+            <div class="floating-element element-69">
+                <div class="music-symbol">🥁</div>
+            </div>
+            <div class="floating-element element-70">
+                <div class="music-symbol">🎺</div>
+            </div>
+            <div class="floating-element element-71">
+                <div class="music-symbol">🎼</div>
+            </div>
+            <div class="floating-element element-72">
+                <div class="music-symbol">🎭</div>
+            </div>
+            <div class="floating-element element-73">
+                <div class="music-symbol">🌟</div>
+            </div>
+            <div class="floating-element element-74">
+                <div class="music-symbol">💫</div>
+            </div>
+            <div class="floating-element element-75">
+                <div class="music-symbol">🔊</div>
+            </div>
+            <div class="floating-element element-76">
+                <div class="music-symbol">🎨</div>
+            </div>
+            <div class="floating-element element-77">
+                <div class="music-symbol">🎪</div>
+            </div>
+            <div class="floating-element element-78">
+                <div class="music-symbol">🎯</div>
+            </div>
+            <div class="floating-element element-79">
+                <div class="music-symbol">🔥</div>
+            </div>
+            <div class="floating-element element-80">
+                <div class="music-symbol">⚡</div>
+            </div>
+            <div class="floating-element element-81">
+                <div class="music-symbol">🌈</div>
+            </div>
+            <div class="floating-element element-82">
+                <div class="music-symbol">🎊</div>
+            </div>
+            <div class="floating-element element-83">
+                <div class="music-symbol">💎</div>
+            </div>
+            <div class="floating-element element-84">
+                <div class="music-symbol">🚀</div>
+            </div>
+            <div class="floating-element element-85">
+                <div class="music-symbol">✨</div>
+            </div>
+            <div class="floating-element element-86">
+                <div class="music-symbol">🎀</div>
+            </div>
+            <div class="floating-element element-87">
+                <div class="music-symbol">🎈</div>
+            </div>
+            <div class="floating-element element-88">
+                <div class="music-symbol">🎉</div>
+            </div>
+            <div class="floating-element element-89">
+                <div class="music-symbol">🎮</div>
+            </div>
+            <div class="floating-element element-90">
+                <div class="music-symbol">🎲</div>
+            </div>
+            <div class="floating-element element-91">
+                <div class="music-symbol">♪</div>
+            </div>
+            <div class="floating-element element-92">
+                <div class="music-symbol">♫</div>
+            </div>
+            <div class="floating-element element-93">
+                <div class="music-symbol">🎵</div>
+            </div>
+            <div class="floating-element element-94">
+                <div class="music-symbol">🎶</div>
+            </div>
+            <div class="floating-element element-95">
+                <div class="music-symbol">🎧</div>
+            </div>
+            <div class="floating-element element-96">
+                <div class="music-symbol">🎤</div>
+            </div>
+            <div class="floating-element element-97">
+                <div class="music-symbol">🎸</div>
+            </div>
+            <div class="floating-element element-98">
+                <div class="music-symbol">🎹</div>
+            </div>
+            <div class="floating-element element-99">
+                <div class="music-symbol">🥁</div>
+            </div>
+            <div class="floating-element element-100">
+                <div class="music-symbol">🎺</div>
+            </div>
+        </div>
+    {% endif %}
+
     <!-- Навигация -->
-    <nav class="navbar">
+    <nav class="navbar case-navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="{{ url_for('index') }}" class="logo-text">Portfolio</a>
@@ -37,177 +965,844 @@
         </div>
     </nav>
 
-    <!-- Главная секция кейса -->
-    <section class="case-hero">
-        <div class="container">
-            <div class="case-hero-content">
-                <div class="case-breadcrumb">
-                    <a href="{{ url_for('index') }}">Главная</a>
-                    <span>/</span>
-                    <a href="{{ url_for('index') }}#cases">Кейсы</a>
-                    <span>/</span>
-                    <span>{{ case.title }}</span>
-                </div>
-                <h1 class="case-hero-title">{{ case.title }}</h1>
-                <p class="case-hero-subtitle">{{ case.description }}</p>
-                <div class="case-hero-tags">
-                    <span class="tag">{{ case.category }}</span>
-                    <span class="tag">{{ case.year }}</span>
-                    {% for tech in case.technologies[:2] %}
-                    <span class="tag">{{ tech }}</span>
-                    {% endfor %}
-                </div>
+    <!-- Основной контент -->
+    <div class="case-content">
+        {% if case.client == 'Structo' %}
+            <!-- STRUCTO - Минимализм и технологичность -->
+            <section class="case-hero structo-hero">
+                <div class="structo-bg">
+        </div>
+                
+                <div class="container">
+                    <div class="structo-hero-content">
+                        <div class="structo-logo">
+                            <h1 class="structo-title">
+                                <span class="structo-s">S</span>
+                                <span class="structo-text">tructo</span>
+                            </h1>
+                            <div class="structo-tagline">TEXT → 3D MODELS</div>
+        </div>
+                        
+                        <div class="structo-description">
+                            <p class="structo-lead">{{ case.description }}</p>
+                            <div class="structo-tech-stack">
             </div>
-            <div class="case-hero-visual">
-                <div class="case-hero-image">
-                    <i class="fas fa-{% if case.category == 'Брендинг' %}palette{% elif case.category == 'Digital' %}laptop{% elif case.category == 'PR' %}bullhorn{% else %}briefcase{% endif %}"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Обзор кейса -->
-    <section class="case-overview">
+
+
+            <!-- Structo Description -->
+            <section class="structo-description">
         <div class="container">
-            <div class="case-overview-grid">
-                <div class="overview-item">
-                    <div class="overview-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Клиент</h3>
-                    <p>{{ case.client }}</p>
+                    <h2 class="section-title">
+                        Описание
+                    </h2>
+                    <div class="description-content">
+                        <p>Structo — IT российский веб-сайт для преобразования текстовой информации в трёхмерные объекты.</p>
                 </div>
-                <div class="overview-item">
-                    <div class="overview-icon">
-                        <i class="fas fa-tag"></i>
+                </div>
+            </section>
+
+
+
+
+
+            <!-- Structo Project Goals -->
+            <section class="structo-goals">
+                <div class="container">
+                    <h2 class="section-title">
+                        Задачи проекта
+                    </h2>
+                    <div class="goals-grid">
+                        <div class="goal-item">
+                            <div class="goal-icon">🎯</div>
+                            <h3>Интуитивный интерфейс</h3>
+                            <p>Создание интуитивно понятного интерфейса для удобного создания моделей</p>
+            </div>
+                        <div class="goal-item">
+                            <div class="goal-icon">⚡</div>
+                            <h3>Мгновенная генерация</h3>
+                            <p>Мгновенная генерация 3D-моделей по текстовым запросам</p>
+                </div>
+                        <div class="goal-item">
+                            <div class="goal-icon">📥</div>
+                            <h3>Экспорт моделей</h3>
+                            <p>Возможность выгружать созданные модели для дальнейшего использования</p>
+                            </div>
+                        <div class="goal-item">
+                            <div class="goal-icon">🎯</div>
+                            <h3>Высокая точность</h3>
+                            <p>Высокая точность в создании моделей на основе пользовательских запросов</p>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+            <!-- Structo Challenge -->
+            <section class="structo-challenge">
+        <div class="container">
+                    <div class="challenge-content">
+                        <h2 class="section-title">
+                            Цель кейса
+                        </h2>
+                        <p class="challenge-text">{{ case.challenge }}</p>
+                        
+                                                <div class="challenge-metrics">
+                            <div class="metric">
+                                <div class="metric-text">Повысить узнаваемость бренда Structo на рынке</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-text">Стимулировать регистрацию новых пользователей</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-text">Увеличить охват и активность в социальных сетях</div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+            <!-- Structo USP -->
+            <section class="structo-usp">
+        <div class="container">
+                    <h2 class="section-title">
+                        УТП
+                    </h2>
+                    <div class="usp-content">
+                        <div class="usp-highlight">
+                            <h3>Structo — российский сервис, который позволяет легко и быстро преобразовать текст в 3D-модель для любых задач</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo Target Audience -->
+            <section class="structo-audience">
+                <div class="container">
+                    <h2 class="section-title">
+                        Целевая аудитория
+                    </h2>
+                    <div class="audience-grid">
+                        <div class="audience-segment">
+                            <div class="segment-icon">🎓</div>
+                            <h3>Студенты и преподаватели</h3>
+                            <p>Использование платформы Structo для выполнения учебных заданий, создания игр, визуализации проектов и других образовательных целей. Программа поможет сэкономить время и избежать детального изучения программ по созданию 3D моделей.</p>
+                        </div>
+                        <div class="audience-segment">
+                            <div class="segment-icon">🎨</div>
+                            <h3>Дизайнеры и разработчики</h3>
+                            <p>Применяют Structo для создания 3D-моделей, необходимых в их профессиональной деятельности, таких как разработка игр, анимация и визуализация идей. Structo ускоряет процесс, позволяя быстрее получать результат.</p>
+                        </div>
+                        <div class="audience-segment">
+                            <div class="segment-icon">🏗️</div>
+                            <h3>Инженеры и архитекторы</h3>
+                            <p>Используют платформу для визуальной демонстрации своих проектов, моделирования и презентации инженерных и архитектурных решений.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo Competitors -->
+            <section class="structo-competitors">
+                <div class="container">
+                    <h2 class="section-title">
+                        Конкуренты
+                    </h2>
+                    <div class="competitors-grid">
+                        <div class="competitor-card">
+                            <h3>Meshy - Free 3D AI Model Generator</h3>
+                            <div class="competitor-differences">
+                                <p>• Structo является российским аналогом зарубежных сервисов</p>
+                                <p>• Meshy имеет систему подписки - бесплатно можно сгенерировать только несколько раз. Structo предлагает систему ограниченного количества генераций без подписки</p>
+                            </div>
+                        </div>
+                        <div class="competitor-card">
+                            <h3>CSM 3D Viewer</h3>
+                            <div class="competitor-differences">
+                                <p>• CSM может преобразовывать только изображения, Structo работает с текстом</p>
+                                <p>• С Structo можно выгружать объекты в качестве мэшей</p>
+                            </div>
+                        </div>
+                        <div class="competitor-card">
+                            <h3>Luma</h3>
+                            <div class="competitor-differences">
+                                <p>• Structo является российским аналогом</p>
+                                <p>• Luma перестала предлагать услуги генерации объектов и сменила вектор на генерацию видео</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="competitive-advantage">
+                        <h3>Ключевые преимущества Structo:</h3>
+                        <p>Одно из значимых отличий Structo от конкурентов — генерация 3D-моделей из текста без необходимости работы с изображениями или сложными программами. А в отличие от других зарубежных сервисов, Structo доступен на русском языке.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo Content Strategy Goals -->
+            <section class="structo-content-goals">
+                <div class="container">
+                    <h2 class="section-title">
+                        Цели контент-стратегии
+                    </h2>
+                    <div class="content-goals-grid">
+                        <div class="content-goal">
+                            <div class="goal-number">01</div>
+                            <h3>Повышение лояльности</h3>
+                            <p>Создать долгосрочные отношения с пользователями, стимулируя их к регулярному использованию платформы через публикации о кейсах пользователей, их отзывы и акценты на функциональности платформы.</p>
+                        </div>
+                        <div class="content-goal">
+                            <div class="goal-number">02</div>
+                            <h3>Создание имиджа</h3>
+                            <p>Создание положительного имиджа и повышения доверия у пользователей платформы через партнерские отношения, а также советы по применению платформы для различных профессиональных сфер.</p>
+                        </div>
+                        <div class="content-goal">
+                            <div class="goal-number">03</div>
+                            <h3>Повышение грамотности</h3>
+                            <p>Повысить грамотность целевой аудитории в использовании платформы через гайды, чек-листы и инструкции по использованию платформы.</p>
+                        </div>
+                        <div class="content-goal">
+                            <div class="goal-number">04</div>
+                            <h3>Увеличение узнаваемости</h3>
+                            <p>Увеличение узнаваемости стартапа Structo среди ЦА, повышение посещаемости и охвата сайта, привлечение новых пользователей на платформу.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo Content Examples -->
+            <section class="structo-content-examples">
+                <div class="container">
+                    <h2 class="section-title">
+                        Примеры контент-стратегии
+                    </h2>
+                    <div class="content-examples-grid">
+                        <div class="content-type">
+                            <div class="type-icon">📚</div>
+                            <h3>Образовательный контент</h3>
+                            <ul>
+                                <li>Гайды: «Как создать 3D-модель из текста за 1 минуту» (пост-карусель + видео)</li>
+                                <li>Чек-листы: «5 способов использовать Structo для учебы / работы / творчества» (в формате инфографики)</li>
+                            </ul>
+                        </div>
+                        <div class="content-type">
+                            <div class="type-icon">🎉</div>
+                            <h3>Развлекательный контент</h3>
+                            <ul>
+                                <li>Мемы и тренды (связанные с 3D-графикой, AI, технологическими инновациями)</li>
+                                <li>Вовлекающий контент: голосования («Какой 3D-объект получился лучше?»), челленджи (создай свою первую модель и поделись результатом)</li>
+                            </ul>
+                        </div>
+                        <div class="content-type">
+                            <div class="type-icon">💼</div>
+                            <h3>Кейсы и отзывы</h3>
+                            <ul>
+                                <li>Примеры моделей, созданных на платформе (до/после, видео-демонстрации)</li>
+                                <li>Истории пользователей: как Structo помог в учебе/работе</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo Visual Examples -->
+            <section class="structo-visual-examples">
+                <div class="container">
+                    <h2 class="section-title">
+                        Пример визуальной части
+                    </h2>
+                    <div class="visual-content">
+                        <div class="visual-description">
+                            <h3>Инфографика "Сферы для использования Structo"</h3>
+                            <p>Была создана наглядная инфографика, демонстрирующая основные сферы применения платформы Structo. Визуализация помогает потенциальным пользователям лучше понять возможности сервиса и найти свою область применения.</p>
+                        </div>
+                        
+                        <div class="infographic-placeholder">
+                            <div class="placeholder-content">
+                                <i class="fas fa-image"></i>
+                                <h4>Инфографика</h4>
+                                <p>"Сферы для использования Structo"</p>
+                                <small>Место для изображения инфографики</small>
+                            </div>
+                        </div>
+                        
+                        <div class="visual-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">🎓</div>
+                                <h4>Образование</h4>
+                                <p>Визуализация учебных материалов</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🎮</div>
+                                <h4>Игровая индустрия</h4>
+                                <p>Создание игровых ассетов</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🏗️</div>
+                                <h4>Архитектура</h4>
+                                <p>Прототипирование проектов</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🎨</div>
+                                <h4>Дизайн</h4>
+                                <p>Быстрое создание концептов</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo Media Plan -->
+            <section class="structo-media-plan">
+                <div class="container">
+                    <h2 class="section-title">
+                        Медиаплан
+                    </h2>
+                    <div class="media-plan-content">
+                        <p>Для достижения маркетинговых целей стартапа Structo был разработан контент-план и медиаплан, для повышения узнаваемости стартапа, а также для наибольшей вовлеченности ЦА.</p>
+                        <p>Стратегия включает в себя как развлекательный, так и более образовательный контент, а также эффективное распределение между основными каналами коммуникации.</p>
+                        <p>Контент-план разработан с учетом интересов разных сегментов и интересов целевой аудитории стартапа.</p>
+                        
+                        <div class="media-plan-images">
+                            <div class="plan-image-placeholder">
+                                <div class="placeholder-content">
+                                    <i class="fas fa-file-excel"></i>
+                                    <p>Эксель-таблица с медиапланом</p>
+                                    <small>Место для изображения таблицы</small>
+                                </div>
+                            </div>
+                            <div class="plan-image-placeholder">
+                                <div class="placeholder-content">
+                                    <i class="fas fa-chart-line"></i>
+                                    <p>Детальный медиаплан</p>
+                                    <small>Место для изображения плана</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo PR and Collaborations -->
+            <section class="structo-pr">
+                <div class="container">
+                    <h2 class="section-title">
+                        PR и коллаборации
+                    </h2>
+                    <div class="pr-content">
+                        <h3>Коллаборации с образовательными и другими платформами:</h3>
+                        <div class="collaboration-grid">
+                            <div class="collaboration-item">
+                                <h4>XYZ School</h4>
+                                <p>Предлагает курсы по созданию 3D-моделей для игр, кино и рекламы</p>
+                            </div>
+                            <div class="collaboration-item">
+                                <h4>Skillbox</h4>
+                                <p>Образовательная платформа с курсами по 3D-моделированию</p>
+                            </div>
+                            <div class="collaboration-item">
+                                <h4>Contented</h4>
+                                <p>Школа дизайна с онлайн-курсами по 3D-моделированию для разных уровней подготовки</p>
+                            </div>
+                            <div class="collaboration-item">
+                                <h4>Сайты для создания игр</h4>
+                                <p>Партнерство с платформами разработки игр</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo SWOT Analysis -->
+            <section class="structo-swot">
+                <div class="container">
+                    <h2 class="section-title">
+                        SWOT-анализ
+                    </h2>
+                    <div class="swot-grid">
+                        <div class="swot-section strengths">
+                            <h3>Сильные стороны</h3>
+                            <ul>
+                                <li>Генерация 3D-моделей из текста без необходимости работы с изображениями</li>
+                                <li>Structo доступен на русском языке</li>
+                                <li>Простота использования — интуитивно понятный интерфейс</li>
+                                <li>Возможность выгружать модели и использовать их в дальнейшей работе</li>
+                                <li>Возможность использования программы в разных сферах: архитектура, создание игр, образование и др.</li>
+                            </ul>
+                        </div>
+                        <div class="swot-section weaknesses">
+                            <h3>Слабые стороны</h3>
+                            <ul>
+                                <li>Недостаточная известность Structo на рынке</li>
+                                <li>Отсутствие мобильного приложения — пользователи не могут работать с платформой с телефона или планшета</li>
+                                <li>Отсутствие интеграции с популярными 3D-редакторами (Blender, Unity и др.) — это может усложнить процесс дальнейшего использования моделей</li>
+                            </ul>
+                        </div>
+                        <div class="swot-section opportunities">
+                            <h3>Возможности</h3>
+                            <ul>
+                                <li>Растущий интерес к 3D-моделям в разных сферах</li>
+                                <li>Популярность образовательных программ</li>
+                                <li>Рост AI во всем мире</li>
+                                <li>Партнерство с крупными образовательными платформами</li>
+                            </ul>
+                        </div>
+                        <div class="swot-section threats">
+                            <h3>Угрозы</h3>
+                            <ul>
+                                <li>Конкуренция с более крупными зарубежными сайтами</li>
+                                <li>Изменения в технологической сфере, которые могут потребовать постоянного обновления платформы</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo Results -->
+            <section class="structo-results">
+                <div class="container">
+                    <h2 class="section-title">
+                        Прогнозируемые результаты
+                    </h2>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <p>Рост узнаваемости бренда на 30% за 3 месяца</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <p>Достижение охвата в социальных сетях стартапа - в 1000 человек за 3 месяца</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <p>Увеличение количества регистраций на платформе на 15%</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo Conclusions -->
+            <section class="structo-conclusions">
+                <div class="container">
+                    <h2 class="section-title">
+                        Выводы
+                    </h2>
+                    <div class="conclusions-content">
+                        <div class="conclusion-item">
+                            <div class="conclusion-icon">🎯</div>
+                            <p>ЦА заинтересована в простом решении для 3D, особенно студенты и дизайнеры</p>
+                        </div>
+                        <div class="conclusion-item">
+                            <div class="conclusion-icon">📱</div>
+                            <p>Structo можно развивать через обучающий и UGC-контент</p>
+                        </div>
+                        <div class="conclusion-item">
+                            <div class="conclusion-icon">🇷🇺</div>
+                            <p>Сильной стороной является русскоязычный интерфейс и простота</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structo Case Conclusions -->
+            <section class="structo-case-conclusions">
+                <div class="container">
+                    <h2 class="section-title">
+                        Выводы по кейсу
+                    </h2>
+                    <div class="case-conclusions-grid">
+                        <div class="case-conclusion">
+                            <div class="conclusion-number">01</div>
+                            <p>Провела анализ продукта и целевой аудитории</p>
+                        </div>
+                        <div class="case-conclusion">
+                            <div class="conclusion-number">02</div>
+                            <p>Сформулировала цели маркетинговой стратегии и УТП</p>
+                        </div>
+                        <div class="case-conclusion">
+                            <div class="conclusion-number">03</div>
+                            <p>Разработала презентацию проекта и рекламной кампании</p>
+                        </div>
+                        <div class="case-conclusion">
+                            <div class="conclusion-number">04</div>
+                            <p>Составила контент-стратегию и медиаплан с учётом сегментов ЦА</p>
+                        </div>
+                        <div class="case-conclusion">
+                            <div class="conclusion-number">05</div>
+                            <p>Подготовила SWOT-анализ и анализ конкурентов</p>
+                        </div>
+                        <div class="case-conclusion">
+                            <div class="conclusion-number">06</div>
+                            <p>Создала визуальные материалы: инфографику, табличный медиаплан, контент-посты</p>
+                        </div>
+                        <div class="case-conclusion">
+                            <div class="conclusion-number">07</div>
+                            <p>Проработала предложения для коллабораций и PR</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+        {% elif case.client == 'CandleNur' %}
+            <!-- CANDLENUR - Уют и тепло -->
+            <section class="case-hero candlenur-hero">
+                <div class="candlenur-bg">
+                    <div class="warm-glow"></div>
+                    <div class="floating-petals">
+                        <div class="petal petal-1"></div>
+                        <div class="petal petal-2"></div>
+                        <div class="petal petal-3"></div>
+                        <div class="petal petal-4"></div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="candlenur-hero-content">
+                        <div class="candlenur-logo">
+                            <h1 class="candlenur-title">CandleNur</h1>
+                            <div class="candlenur-tagline">Создаем уют ручной работы</div>
+                        </div>
+                        
+                        <div class="candlenur-description">
+                            <p class="candlenur-lead">{{ case.description }}</p>
+                            <div class="candlenur-features">
+                                <span class="feature-tag">Ручная работа</span>
+                                <span class="feature-tag">Натуральные материалы</span>
+                                <span class="feature-tag">Уникальные ароматы</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CandleNur Overview -->
+            <section class="case-overview candlenur-overview">
+                <div class="container">
+                    <div class="overview-grid">
+                        <div class="overview-card warm-card">
+                            <div class="card-icon">
+                                <i class="fas fa-palette"></i>
                     </div>
                     <h3>Категория</h3>
                     <p>{{ case.category }}</p>
                 </div>
-                <div class="overview-item">
-                    <div class="overview-icon">
+                        <div class="overview-card warm-card">
+                            <div class="card-icon">
                         <i class="fas fa-calendar"></i>
                     </div>
                     <h3>Год</h3>
                     <p>{{ case.year }}</p>
                 </div>
-                <div class="overview-item">
-                    <div class="overview-icon">
-                        <i class="fas fa-tools"></i>
+                        <div class="overview-card warm-card">
+                            <div class="card-icon">
+                                <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Технологии</h3>
-                    <p>{{ case.technologies | join(', ') }}</p>
+                            <h3>Миссия</h3>
+                            <p>Создавать уют и дарить радость</p>
                 </div>
+                        <div class="overview-card warm-card">
+                            <div class="card-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h3>Результат</h3>
+                            <p><a href="http://candlenur.tilda.ws" target="_blank">Сайт бренда</a></p>
+                        </div>
             </div>
         </div>
     </section>
 
-    <!-- Детали кейса -->
-    <section class="case-details">
+            <!-- CandleNur Story -->
+            <section class="candlenur-story">
         <div class="container">
-            <div class="case-content">
-                <div class="case-section">
-                    <h2>Вызов</h2>
+                    <div class="story-content">
+                        <h2 class="section-title elegant-title">Задача проекта</h2>
+                        <div class="story-text">
                     <p>{{ case.challenge }}</p>
+                            <p>CandleNur — это не просто свечи, это атмосфера уюта, созданная вручную с любовью к деталям. Каждая свеча изготавливается из натурального воска с сертификатом IFRA, премиальных ароматизаторов и качественных фитилей.</p>
                 </div>
 
-                <div class="case-section">
-                    <h2>Решение</h2>
-                    <p>{{ case.solution }}</p>
+                        <div class="brand-values">
+                            <div class="value-item">
+                                <div class="value-icon">🕯️</div>
+                                <h4>Качество</h4>
+                                <p>Только сертифицированные материалы</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">🤲</div>
+                                <h4>Ручная работа</h4>
+                                <p>Каждая свеча создается с душой</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">🏠</div>
+                                <h4>Уют</h4>
+                                <p>Создаем атмосферу дома</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CandleNur Solution -->
+            <section class="candlenur-solution">
+                <div class="container">
+                    <h2 class="section-title elegant-title">Наше решение</h2>
                     
-                    <div class="solution-steps">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h3>Исследование и анализ</h3>
-                                <p>Провели глубокий анализ целевой аудитории, конкурентов и рынка</p>
+                    <div class="solution-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Исследование бренда</h3>
+                                <p>Изучили ценности, миссию и уникальность CandleNur</p>
                             </div>
                         </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h3>Разработка стратегии</h3>
-                                <p>Создали комплексную стратегию с учетом всех каналов коммуникации</p>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Визуальная концепция</h3>
+                                <p>Создали теплую, уютную айдентику с акцентом на handmade</p>
                             </div>
                         </div>
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h3>Реализация</h3>
-                                <p>Воплотили стратегию в жизнь с помощью креативных решений</p>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Создание сайта</h3>
+                                <p>Разработали одностраничный сайт на Tilda с нуля</p>
                             </div>
                         </div>
-                        <div class="step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h3>Анализ результатов</h3>
-                                <p>Измерили эффективность и оптимизировали процессы</p>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Контент-стратегия</h3>
+                                <p>Подготовили план продвижения с упором на атмосферность</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="case-section">
-                    <h2>Результаты</h2>
-                    {% if case.results %}
-                    <div class="results-list">
-                        {% for result in case.results %}
-                        <div class="result-achievement">
-                            <i class="fas fa-check-circle"></i>
-                            <span>{{ result }}</span>
+        {% elif case.client == 'alttt.' %}
+            <!-- ALTTT - Атмосфера и музыка -->
+            <section class="case-hero alttt-hero">
+                <div class="alttt-bg">
+                            </div>
+                
+                <div class="container">
+                    <div class="alttt-hero-content">
+                        <div class="alttt-logo">
+                            <h1 class="alttt-title">alttt.</h1>
+                            <div class="alttt-tagline">Музыка для новых звучаний</div>
                         </div>
-                        {% endfor %}
+                        
+                        <div class="alttt-description">
+                            <p class="alttt-lead">{{ case.description }}</p>
+                            <div class="alttt-platforms">
+                                <span class="platform-tag">TikTok</span>
+                                <span class="platform-tag">Instagram</span>
+                                <span class="platform-tag">YouTube</span>
+                                <span class="platform-tag">Spotify</span>
+                        </div>
                     </div>
-                    {% endif %}
+                </div>
+                                </div>
+            </section>
+
+            <!-- alttt Overview -->
+            <section class="case-overview alttt-overview">
+                <div class="container">
+                    <div class="overview-grid">
+                        <div class="overview-card music-card">
+                            <div class="card-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h3>Категория</h3>
+                            <p>{{ case.category }}</p>
+                        </div>
+                        <div class="overview-card music-card">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar"></i>
+                        </div>
+                            <h3>Год</h3>
+                            <p>{{ case.year }}</p>
+                    </div>
+                        <div class="overview-card music-card">
+                            <div class="card-icon">
+                                <i class="fas fa-rocket"></i>
+                </div>
+                            <h3>Цель</h3>
+                            <p>Успешный запуск релиза</p>
+                        </div>
+                        <div class="overview-card music-card">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                        </div>
+                            <h3>Рост</h3>
+                            <p>+15% в TikTok</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- alttt Challenge -->
+            <section class="alttt-challenge">
+                <div class="container">
+                    <div class="challenge-content">
+                        <h2 class="section-title music-title">Вызов</h2>
+                        <p class="challenge-text">{{ case.challenge }}</p>
+                        
+                        <div class="audience-stats">
+                            <div class="stat-item">
+                                <div class="stat-platform">TikTok</div>
+                                <div class="stat-number">59</div>
+                                <div class="stat-label">подписчиков</div>
+                        </div>
+                            <div class="stat-item">
+                                <div class="stat-platform">Instagram</div>
+                                <div class="stat-number">148</div>
+                                <div class="stat-label">подписчиков</div>
+                    </div>
+                            <div class="stat-item">
+                                <div class="stat-platform">YouTube</div>
+                                <div class="stat-number">206</div>
+                                <div class="stat-label">подписчиков</div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- alttt Strategy -->
+            <section class="alttt-strategy">
+                <div class="container">
+                    <h2 class="section-title music-title">Стратегия продвижения</h2>
                     
-                    <p>Проект показал отличные результаты и превзошел ожидания клиента. Комплексный подход и креативные решения позволили достичь поставленных целей.</p>
-                </div>
-
-                {% if case.technologies %}
-                <div class="case-section">
-                    <h2>Использованные технологии</h2>
-                    <div class="tech-grid">
-                        {% for tech in case.technologies %}
-                        <div class="tech-item">
-                            <span class="tech-name">{{ tech }}</span>
+                    <div class="strategy-grid">
+                        <div class="strategy-card">
+                            <div class="card-header">
+                                <i class="fab fa-tiktok"></i>
+                                <h3>TikTok</h3>
                         </div>
-                        {% endfor %}
+                            <ul>
+                                <li>Трендовые челленджи с треком</li>
+                                <li>Реакции на музыку</li>
+                                <li>Короткие вайбовые видео</li>
+                            </ul>
+                        </div>
+                        <div class="strategy-card">
+                            <div class="card-header">
+                                <i class="fab fa-instagram"></i>
+                                <h3>Instagram</h3>
+                    </div>
+                            <ul>
+                                <li>Лайв-стримы о создании трека</li>
+                                <li>Личные посты и сторис</li>
+                                <li>Behind the scenes контент</li>
+                            </ul>
+                </div>
+                        <div class="strategy-card">
+                            <div class="card-header">
+                                <i class="fab fa-youtube"></i>
+                                <h3>YouTube</h3>
+                            </div>
+                            <ul>
+                                <li>Музыкальные видео</li>
+                                <li>Процесс создания</li>
+                                <li>Интервью и подкасты</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+            </section>
                 {% endif %}
+
+        <!-- Результаты (общие для всех кейсов) -->
+        <section class="case-results">
+            <div class="container">
+                <h2 class="section-title">Результаты</h2>
+                <div class="results-grid">
+                    {% for result in case.results %}
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p>{{ result }}</p>
+                    </div>
+                        {% endfor %}
+                    </div>
+                </div>
+        </section>
+
+        <!-- Навыки (только для Structo) -->
+        {% if case.client == 'Structo' %}
+        <section class="case-technologies">
+            <div class="container">
+                <h2 class="section-title">Навыки, продемонстрированные в кейсе</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <span>Маркетинговое планирование</span>
+                    </div>
+                    <div class="tech-item">
+                        <span>Конкурентный анализ</span>
+                    </div>
+                    <div class="tech-item">
+                        <span>Создание контент- и медиастратегии</span>
+                    </div>
+                    <div class="tech-item">
+                        <span>Визуализация идей в Canva</span>
+                    </div>
+                    <div class="tech-item">
+                        <span>Работа с Excel и презентациями</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        {% endif %}
+
+
 
     <!-- Навигация между кейсами -->
     <section class="case-navigation">
         <div class="container">
             <div class="nav-cases">
-                <a href="{{ url_for('index') }}#cases" class="nav-case prev">
+                    {% set prev_case = case.id - 1 if case.id > 1 else 3 %}
+                    {% set next_case = case.id + 1 if case.id < 3 else 1 %}
+                    
+                    <a href="{{ url_for('case_detail', case_id=prev_case) }}" class="nav-case nav-prev">
                     <i class="fas fa-arrow-left"></i>
+                        <span>Предыдущий кейс</span>
+                    </a>
+                    
+                    <a href="{{ url_for('index') }}#cases" class="nav-case nav-home">
+                        <i class="fas fa-th-large"></i>
                     <span>Все кейсы</span>
                 </a>
-                {% if case.id < 3 %}
-                <a href="{{ url_for('case_detail', case_id=case.id + 1) }}" class="nav-case next">
+                    
+                    <a href="{{ url_for('case_detail', case_id=next_case) }}" class="nav-case nav-next">
                     <span>Следующий кейс</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
-                {% endif %}
             </div>
         </div>
     </section>
 
-    <!-- Контакты -->
-    <section class="contact-cta">
+        <!-- CTA -->
+        <section class="case-cta">
         <div class="container">
-            <h2>Понравился проект?</h2>
-            <p>Давайте обсудим ваши задачи</p>
-            <a href="{{ url_for('index') }}#contact" class="btn btn-primary">
-                <i class="fas fa-envelope"></i>
-                Связаться со мной
-            </a>
+                <h2>Готовы обсудить ваш проект?</h2>
+                <p>Давайте создадим что-то удивительное вместе</p>
+                <a href="{{ url_for('index') }}#contact" class="btn btn-primary">Связаться со мной</a>
         </div>
     </section>
+    </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
