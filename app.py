@@ -63,7 +63,7 @@ PORTFOLIO_DATA = {
         },
         {
             'id': 3,
-            'title': 'alttt. - Музыкальный проект',
+            'title': 'alttt. - Музыкант',
             'description': 'Разработка стратегии продвижения для музыканта',
             'image': 'images/alttt/musician.jpg',
             'category': 'Digital-продвижение',
@@ -87,6 +87,15 @@ PORTFOLIO_DATA = {
     'other_projects': [
         {
             'id': 1,
+            'title': 'Визуальные материалы',
+            'description': 'Работы в Canva, Figma, презентации',
+            'category': 'Дизайн',
+            'year': '2024',
+            'highlights': ['UI/UX дизайн', 'Визуальное оформление', 'Прототипирование'],
+            'icon': 'palette'
+        },
+        {
+            'id': 2,
             'title': 'PR-стратегия для Almond Crew',
             'description': 'Разработка PR и маркетинговой стратегии для eco-friendly бренда женской одежды',
             'category': 'PR-стратегия',
@@ -95,7 +104,7 @@ PORTFOLIO_DATA = {
             'icon': 'leaf'
         },
         {
-            'id': 2,
+            'id': 3,
             'title': 'Анализ коммуникаций Сбербанка',
             'description': 'Университетский проект по анализу рекламной стратегии и ребрендинга ПАО «Сбербанк»',
             'category': 'Аналитика',
@@ -104,22 +113,13 @@ PORTFOLIO_DATA = {
             'icon': 'chart-line'
         },
         {
-            'id': 3,
+            'id': 4,
             'title': 'Работы в Excel',
             'description': 'Создание медиапланов и аналитических таблиц для различных проектов',
             'category': 'Аналитика',
             'year': '2024',
             'highlights': ['Медиапланы для радиостанций', 'Аналитические таблицы', 'Работа с большими данными'],
             'icon': 'file-excel'
-        },
-        {
-            'id': 4,
-            'title': 'Работы в Figma',
-            'description': 'Создание дизайн-макетов и визуальных материалов',
-            'category': 'Дизайн',
-            'year': '2024',
-            'highlights': ['UI/UX дизайн', 'Визуальное оформление', 'Прототипирование'],
-            'icon': 'palette'
         }
     ],
     'about': {

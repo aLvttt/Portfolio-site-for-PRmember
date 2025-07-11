@@ -95,6 +95,18 @@
                                 <span class="project-category">{{ project.category }}</span>
                                 <span class="project-year">{{ project.year }}</span>
                             </div>
+                            
+                            <!-- Место для ссылок и файлов -->
+                            <div class="project-links">
+                                <div class="link-placeholder">
+                                    <i class="fas fa-link"></i>
+                                    <span>Ссылка на проект: [Будет добавлена]</span>
+                                </div>
+                                <div class="file-placeholder">
+                                    <i class="fas fa-file-download"></i>
+                                    <span>Файлы проекта: [Будут добавлены]</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     {% endfor %}
@@ -115,8 +127,7 @@
         <!-- Секция контактов -->
         <section class="contact-cta">
             <div class="container">
-                <h2>Давайте создадим что-то удивительное вместе</h2>
-                <p>Готов обсудить ваш проект и найти лучшее решение</p>
+                <h2>Буду рада сотрудничеству</h2>
                 <a href="{{ url_for('index') }}#contact" class="btn btn-secondary">
                     <i class="fas fa-envelope"></i>
                     Связаться со мной
