@@ -1113,6 +1113,8 @@ body {
 }
 
 .contact-info {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -1120,6 +1122,7 @@ body {
     max-width: 500px;
     text-align: center;
 }
+
 
 .contact-item {
     display: flex;
@@ -2793,4 +2796,70 @@ body {
 .file-placeholder span {
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+
+/* Убираем hover-анимацию у не-ссылок в блоке контактов */
+.contact-item:not(:has(a)):hover {
+    border-color: transparent !important;
+    background: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    cursor: text !important;
+    color: inherit !important;
+}
+
+/* Убираем тень от текста в разделах Целевая аудитория для CandleNur и alttt */
+.case-candlenur .audience-segment h3,
+.case-alttt .audience-segment h3,
+.case-candlenur .audience-segment p,
+.case-alttt .audience-segment p {
+    text-shadow: none !important;
+}
+
+
+/* Убираем цветные кружки у нумерации выводов для CandleNur и alttt */
+
+.case-candlenur .step-number,
+.case-candlenur .timeline-dot,
+.case-candlenur .value-number,
+.case-candlenur .result-number,
+.case-candlenur .case-conclusion-index,
+.case-alttt .step-number,
+.case-alttt .timeline-dot,
+.case-alttt .value-number,
+.case-alttt .result-number,
+.case-alttt .case-conclusion-index {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    border-radius: 0 !important;
+}
+
+
+.case-candlenur .step-number::before,
+.case-candlenur .timeline-dot::before,
+.case-candlenur .value-number::before,
+.case-candlenur .result-number::before,
+.case-alttt .step-number::before,
+.case-alttt .timeline-dot::before,
+.case-alttt .value-number::before,
+.case-alttt .result-number::before {
+    display: none !important;
+}
+
+
+/* Отключить анимацию/эффекты при наведении на кнопку “Связаться со мной” */
+.contact-btn:hover,
+.btn-primary:hover,
+.alttt-contact-btn:hover {
+    background: inherit !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    /* любые другие эффекты — тоже убираем! */
 }

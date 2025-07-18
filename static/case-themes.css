@@ -6409,8 +6409,9 @@
 
 .conclusions-content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
+    justify-items: center;
     margin-top: 3rem;
     position: relative;
     z-index: 2;
@@ -6504,7 +6505,6 @@
     position: absolute;
     top: -15px;
     left: 20px;
-    background: #00ffff;
     color: #0f0f23;
     width: 35px;
     height: 35px;
@@ -7094,11 +7094,7 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.candlenur-results .result-icon {
-    font-size: 2rem;
-    color: #A87C56;
-    margin-bottom: 1rem;
-}
+
 
 /* CandleNur Conclusions */
 .candlenur-conclusions {
@@ -7122,9 +7118,12 @@
     border: 1px solid rgba(168, 124, 86, 0.2);
     box-shadow: 0 8px 25px rgba(168, 124, 86, 0.15);
     margin-bottom: 2rem;
+    
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
+    
 }
 
 .candlenur-conclusions .conclusion-icon {
@@ -7208,7 +7207,7 @@
 
 .brand-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3rem;
     margin-top: 3rem;
 }
@@ -7920,3 +7919,5 @@
 /* 3. alttt – блок "Целевая аудитория" */
 .alttt-target-audience .audience-segment h3,
 .alttt-target-audience .audience-segment p { color:#E11D48; }
+
+

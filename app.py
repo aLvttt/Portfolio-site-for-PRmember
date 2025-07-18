@@ -53,7 +53,7 @@ PORTFOLIO_DATA = {
             'technologies': ['Tilda', 'Canva', 'Figma', 'Визуальный дизайн', 'SWOT-анализ'],
             'images': ['images/candlenur/price/1.png', 'images/candlenur/price/2.png', 'images/candlenur/price/3.png', 'images/candlenur/moodboard/moodboard.png', 'images/candlenur/memo/memo.png', 'images/candlenur/how-to-order/2.png'],
             'theme': {
-                'primary': '#EA580C',
+                'primary': '#A87C56',
                 'secondary': '#FB923C', 
                 'accent': '#FED7AA',
                 'gradient': 'linear-gradient(135deg, #7C2D12 0%, #EA580C 30%, #FB923C 70%, #FED7AA 100%)',
