@@ -88,17 +88,21 @@ PORTFOLIO_DATA = {
         {
             'id': 1,
             'title': 'Визуальные материалы',
+            'type': 'design',
             'description': 'Работы в Canva, Figma, презентации',
             'category': 'Дизайн',
-            'year': '2024',
-            'highlights': ['UI/UX дизайн', 'Визуальное оформление', 'Прототипирование'],
-            'icon': 'palette'
+            'year': '2025',
+            'highlights': ['UI/UX дизайн', 'Визуальное оформление'],
+            'icon': 'palette',
+            'image': 'images/design-work.jpg',  # картинка для просмотра
+            'pdf_link': 'files/design-presentation.pdf'
         },
         {
             'id': 2,
             'title': 'PR-стратегия для Almond Crew',
-            'description': 'Разработка PR и маркетинговой стратегии для eco-friendly бренда женской одежды',
+            'type': 'pr',
             'category': 'PR-стратегия',
+            'description': 'Разработка PR и маркетинговой стратегии для eco-friendly бренда женской одежды',
             'year': '2024',
             'highlights': ['SWOT и PEST-анализ', 'Медиапланирование', 'Event-маркетинг', 'Комплексный подход к продвижению'],
             'icon': 'leaf'
@@ -106,20 +110,27 @@ PORTFOLIO_DATA = {
         {
             'id': 3,
             'title': 'Анализ коммуникаций Сбербанка',
+            'type': 'research',
             'description': 'Университетский проект по анализу рекламной стратегии и ребрендинга ПАО «Сбербанк»',
             'category': 'Аналитика',
-            'year': '2024',
+            'year': '2023',
             'highlights': ['Анализ ребрендинга 2020', 'Исследование каналов продвижения', 'Оценка корпоративных ценностей'],
-            'icon': 'chart-line'
+            'icon': 'chart-line',
+            'word_link': 'files/sberbank-analysis.docx'
         },
         {
             'id': 4,
             'title': 'Работы в Excel',
+            'type': 'excel',
             'description': 'Создание медиапланов и аналитических таблиц для различных проектов',
+            'icon': 'file-excel',
             'category': 'Аналитика',
-            'year': '2024',
+            'year': '2023',
             'highlights': ['Медиапланы для радиостанций', 'Аналитические таблицы', 'Работа с большими данными'],
-            'icon': 'file-excel'
+            'excel_links': [
+                {'name': 'Медиаплан "Европа-Плюс"', 'url': 'images/other-projects/mediaplan-europe-plus.xls'},
+                {'name': 'Медиаплан "Studio21"', 'url': 'images/other-projects/mediaplan-studio21.xls'},
+            ]
         }
     ],
     'about': {

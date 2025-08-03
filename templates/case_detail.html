@@ -944,11 +944,8 @@
                                 <h3>Презентация проекта Structo</h3>
                                 <p>Основная презентация, описывающая функционал и возможности платформы</p>
                                 <div class="presentation-links">
-                                    <a href="{{ url_for('static', filename='images/structo/presentation1.pdf') }}" target="_blank" class="presentation-link">
-                                        <i class="fas fa-file-pdf"></i> PDF версия
-                                    </a>
-                                    <a href="#" class="presentation-link powerpoint-link">
-                                        <i class="fas fa-file-powerpoint"></i> PowerPoint версия
+                                    <a href="{{ url_for('static', filename='images/structo/presentation2.pdf') }}" target="_blank" class="presentation-link">
+                                        <i class="fas fa-file-pdf"></i> PDF
                                     </a>
                                 </div>
                             </div>
@@ -960,11 +957,8 @@
                                 <h3>Structo Рекламная кампания</h3>
                                 <p>Презентация стратегии рекламной кампании и продвижения</p>
                                 <div class="presentation-links">
-                                    <a href="{{ url_for('static', filename='images/structo/presentation2.pdf') }}" target="_blank" class="presentation-link">
-                                        <i class="fas fa-file-pdf"></i> PDF версия
-                                    </a>
-                                    <a href="#" class="presentation-link powerpoint-link">
-                                        <i class="fas fa-file-powerpoint"></i> PowerPoint версия
+                                    <a href="{{ url_for('static', filename='images/structo/presentation1.pdf') }}" target="_blank" class="presentation-link">
+                                        <i class="fas fa-file-pdf"></i> PDF
                                     </a>
                                 </div>
                             </div>
@@ -1007,14 +1001,9 @@
                         
                         <div class="media-plan-images">
                             <div class="plan-image-item">
-                                <div class="plan-link-placeholder">
-                                    <p><strong>Ссылка на медиаплан:</strong> [Будет добавлена]</p>
-                                </div>
-                            </div>
-                            
-                            <div class="plan-image-item">
-                                <div class="plan-link-placeholder">
-                                    <p><strong>Ссылка на контент-план:</strong> [Будет добавлена]</p>
+                                <div class="media-plan-link">
+                                    <span>Ссылка на медиаплан + контент-план:</span><br>
+                                    <a href="{{ url_for('static', filename='images/structo/structo-mediaplan.xlsx') }}" download>Скачать медиаплан + контент-план (.xlsx)</a>
                                 </div>
                             </div>
                         </div>
@@ -1360,15 +1349,32 @@
                         <div class="content-category">
                             <h3>Прайс-лист</h3>
                             <div class="content-images-grid">
-                                <img src="{{ url_for('static', filename='images/candlenur/price/1.png') }}" alt="Прайс 1">
-                                <img src="{{ url_for('static', filename='images/candlenur/price/2.png') }}" alt="Прайс 2">
-                                <img src="{{ url_for('static', filename='images/candlenur/price/3.png') }}" alt="Прайс 3">
-                                <img src="{{ url_for('static', filename='images/candlenur/price/4.png') }}" alt="Прайс 4">
-                                <img src="{{ url_for('static', filename='images/candlenur/price/5.png') }}" alt="Прайс 5">
-                                <img src="{{ url_for('static', filename='images/candlenur/price/6.png') }}" alt="Прайс 6">
-                                <img src="{{ url_for('static', filename='images/candlenur/price/7.png') }}" alt="Прайс 7">
-                                <img src="{{ url_for('static', filename='images/candlenur/price/8.png') }}" alt="Прайс 8">
+                                <a href="{{ url_for('static', filename='images/candlenur/price/1.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/price/1.png') }}" alt="Прайс 1">
+                                </a>
+                                <a href="{{ url_for('static', filename='images/candlenur/price/2.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/price/2.png') }}" alt="Прайс 2">
+                                </a>
+                                <a href="{{ url_for('static', filename='images/candlenur/price/3.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/price/3.png') }}" alt="Прайс 3">
+                                </a>
+                                <a href="{{ url_for('static', filename='images/candlenur/price/4.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/price/4.png') }}" alt="Прайс 4">
+                                </a>
+                                <a href="{{ url_for('static', filename='images/candlenur/price/5.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/price/5.png') }}" alt="Прайс 5">
+                                </a>
+                                <a href="{{ url_for('static', filename='images/candlenur/price/6.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/price/6.png') }}" alt="Прайс 6">
+                                </a>
+                                <a href="{{ url_for('static', filename='images/candlenur/price/7.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/price/7.png') }}" alt="Прайс 7">
+                                </a>
+                                <a href="{{ url_for('static', filename='images/candlenur/price/8.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/price/8.png') }}" alt="Прайс 8">
+                                </a>
                             </div>
+
                         </div>
                         
                         <div class="content-category">
@@ -1381,9 +1387,15 @@
                         <div class="content-category">
                             <h3>Инструкция по использованию свечи</h3>
                             <div class="content-images-grid">
-                                <img src="{{ url_for('static', filename='images/candlenur/how-to-order/2.png') }}" alt="Как заказать 1">
-                                <img src="{{ url_for('static', filename='images/candlenur/how-to-order/3.png') }}" alt="Как заказать 2">
-                                <img src="{{ url_for('static', filename='images/candlenur/how-to-order/4.png') }}" alt="Как заказать 3">
+                                <a href="{{ url_for('static', filename='images/candlenur/how-to-order/2.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/how-to-order/2.png') }}" alt="Инструкция 1">
+                                </a>
+                                <a href="{{ url_for('static', filename='images/candlenur/how-to-order/3.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/how-to-order/3.png') }}" alt="Инструкция 2">
+                                </a>
+                                <a href="{{ url_for('static', filename='images/candlenur/how-to-order/4.png') }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='images/candlenur/how-to-order/4.png') }}" alt="Инструкция 3">
+                                </a>
                             </div>
                         </div>
 
@@ -1536,7 +1548,7 @@
                     <h2 class="section-title elegant-title">УТП</h2>
                     <div class="usp-content">
                         <div class="usp-highlight">
-                            <strong>Alttt. - музыка для тех, кто готов к новым звучаниям и ценит смелые эксперименты в музыке.</strong>
+                            <strong>alttt. - музыка для тех, кто готов к новым звучаниям и ценит смелые эксперименты в музыке.</strong>
                         </div>
                     </div>
                 </div>
@@ -1633,22 +1645,9 @@
                     <h2 class="section-title elegant-title">Медиаплан. Контент-план</h2>
                     <div class="media-plan-content">
                         <div class="media-plan-image">
-                            <!-- Место для изображения 4 -->
-                            <div class="image-placeholder">
-                                <p>Изображение медиаплана будет добавлено</p>
-                            </div>
-                            <div class="link-placeholder">
-                                <p><strong>Ссылка на медиаплан:</strong> [Будет добавлена]</p>
-                            </div>
-                        </div>
-                        <div class="media-plan-image">
-                            <!-- Место для изображения 5 -->
-                            <div class="image-placeholder">
-                                <p>Изображение контент-плана будет добавлено</p>
-                            </div>
-                            <div class="link-placeholder">
-                                <p><strong>Ссылка на контент-план:</strong> [Будет добавлена]</p>
-                            </div>
+                           <div class="media-plan-link">
+                            <span>Ссылка на медиаплан:</span><br>
+                            <a href="{{ url_for('static', filename='images/alttt/alttt-mediaplan.xlsx') }}" download>Скачать медиаплан (.xlsx)</a>
                         </div>
                     </div>
                 </div>

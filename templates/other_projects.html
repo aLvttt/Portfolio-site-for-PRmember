@@ -76,40 +76,78 @@
                     {% for project in projects %}
                     <div class="project-card fade-in">
                         <div class="project-icon">
-                            <i class="fas fa-{{ project.icon }}"></i>
+                        <i class="fas fa-{{ project.icon }}"></i>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">{{ project.title }}</h3>
-                            <p class="project-description">{{ project.description }}</p>
-                            
-                            <div class="project-highlights">
-                                {% for highlight in project.highlights %}
-                                <div class="highlight-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>{{ highlight }}</span>
-                                </div>
+                        <h3 class="project-title">{{ project.title }}</h3>
+                        <p class="project-description">{{ project.description }}</p>
+                        <div class="project-highlights">
+                            {% for highlight in project.highlights %}
+                            <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>{{ highlight }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-category">{{ project.category }}</span>
+                            <span class="project-year">{{ project.year }}</span>
+                        </div>
+                        
+                        <!-- Индивидуальный блок для ссылок/файлов -->
+                        <div class="project-links">
+                            {% if project.type == "design" %}
+                            <!-- Фото с увеличением и ссылка на PDF -->
+                            <div style="margin-bottom: 0.5rem;">
+                                <a href="{{ url_for('static', filename='images/other-projects/Instagram post - 4.png') }}" target="_blank">
+                                <img src="{{ url_for('static', filename='images/other-projects/Instagram post - 4.png') }}" alt="Визуальная работа" style="max-width:120px;border-radius:10px;box-shadow:0 2px 8px #bbb;">
+                                </a>
+                            </div>
+                            <div>
+                                <a href="{{ url_for('static', filename='images/other-projects/culture.pdf') }}" target="_blank" class="presentation-link">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                            {% elif project.type == "pr" %}
+                            <!-- Стандартные ссылки/заглушки -->
+                            <div class="link-placeholder">
+                                <i class="fas fa-link"></i>
+                                <span>Ссылка на презентацию:</span>
+                                <a href="{{ url_for('static', filename='images/other-projects/Beige Minimalist Casual Fashion Collection Presentation.pdf') }}" target="_blank" class="presentation-link">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                            <div class="file-placeholder">
+                                <i class="fas fa-file-download"></i>
+                                <span>Excel Файлы:</span>
+                                <a href="{{ url_for('static', filename='images/other-projects/almondcrew.xlsx') }}" download>Скачать медиаплан (.xlsx)</a>
+                            </div>
+                            {% elif project.type == "research" %}
+                            <!-- Только ссылка на Word -->
+                            <div>
+                                <a href="{{ url_for('static', filename='images/other-projects/sber.docx') }}" download>
+                                📄 Скачать аналитический отчёт (DOCX)
+                                </a>
+                            </div>
+                            {% elif project.type == "excel" %}
+                            <!-- Пять ссылок на разные excel -->
+                            <div>
+                                <ul style="padding-left:1.1em;">
+                                {% for f in project.excel_links %}
+                                <li>
+                                    <a href="{{ url_for('static', filename=f.url) }}" download>
+                                    📊 {{ f.name }}
+                                    </a>
+                                </li>
                                 {% endfor %}
+                                </ul>
                             </div>
-                            
-                            <div class="project-meta">
-                                <span class="project-category">{{ project.category }}</span>
-                                <span class="project-year">{{ project.year }}</span>
-                            </div>
-                            
-                            <!-- Место для ссылок и файлов -->
-                            <div class="project-links">
-                                <div class="link-placeholder">
-                                    <i class="fas fa-link"></i>
-                                    <span>Ссылка на проект: [Будет добавлена]</span>
-                                </div>
-                                <div class="file-placeholder">
-                                    <i class="fas fa-file-download"></i>
-                                    <span>Файлы проекта: [Будут добавлены]</span>
-                                </div>
-                            </div>
+                            {% endif %}
+                        </div>
                         </div>
                     </div>
                     {% endfor %}
+
                 </div>
 
                 <!-- CTA секция -->

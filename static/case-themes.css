@@ -7450,26 +7450,25 @@
 }
 
 .media-plan-content {
-    display: grid;
+    display: flex;
+    justify-content: center;  /* центр по горизонтали */
+    align-items: center;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-top: 3rem;
 }
 
 .media-plan-image {
+    display: flex;
+    justify-content: center;  /* центр по горизонтали */
+    align-items: center;
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 20px;
     text-align: center;
 }
 
-.image-placeholder {
-    background: rgba(225, 29, 72, 0.1);
-    padding: 3rem;
-    border-radius: 15px;
-    margin-bottom: 1.5rem;
-    border: 2px dashed rgba(225, 29, 72, 0.3);
-}
+
 
 .link-placeholder {
     background: rgba(225, 29, 72, 0.05);
