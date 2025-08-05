@@ -627,6 +627,13 @@ body {
     z-index: 1;
 }
 
+@media (max-width: 600px) {
+  .floating-elements, .floating-shape, .floating-emoji {
+    display: none !important;
+  }
+}
+
+
 .emoji-1 {
     top: 20%;
     left: 8%;
@@ -2863,3 +2870,18 @@ body {
     opacity: 1 !important;
     /* любые другие эффекты — тоже убираем! */
 }
+
+
+@media (max-width: 600px) {
+  .projects-grid, .other-works-preview {
+    grid-template-columns: 1fr !important;
+  }
+  .project-card, .work-preview-card {
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    padding: 1.2rem;
+  }
+}
+
+

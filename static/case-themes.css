@@ -8042,4 +8042,339 @@
 }
 
 
+@media (max-width: 600px) {
+  .audience-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .audience-segment {
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    padding: 1.2rem;
+  }
+}
 
+
+@media (max-width: 600px) {
+  .presentations-content {
+    max-width: 100%;
+    word-break: break-word;
+    padding: 1.2rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .challenge-metrics, .solution-grid, .content-goals-grid, .conclusions-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .metric, .solution-step, .content-goal, .conclusion-item {
+    min-width: 0 !important;
+    max-width: 100%;
+    word-break: break-word;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .contact-cta h2, .contact-cta p, .contact-cta .btn {
+    max-width: 100%;
+    text-align: center;
+    word-break: break-word;
+    padding: 1rem 0.5rem;
+    box-sizing: border-box;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .goals-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .goal-item {
+    max-width: 100%;
+    word-break: break-word;
+    padding: 1.2rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .brand-values {
+    grid-template-columns: 1fr !important;
+  }
+  .value-item {
+    max-width: 100%;
+    word-break: break-word;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .conclusions-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .conclusion-item {
+    min-width: 0 !important;
+    max-width: 100%;
+    word-break: break-word;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .presentations-grid {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+  .presentation-item {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 0 1.5rem 0 !important;
+    box-sizing: border-box !important;
+    padding: 1.2rem 1rem !important;
+    word-break: break-word !important;
+    border-radius: 20px;
+  }
+  .presentation-links {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.8rem;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .media-plan-content {
+    display: block !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .media-plan-content p {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin-bottom: 1.2rem !important;
+    word-break: break-word !important;
+    text-align: left !important;
+    font-size: 1rem !important;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .nav-cases {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.2rem !important;
+  }
+  .nav-cases .nav-next {
+    order: -1; /* СТАВИТСЯ САМОЙ ВЕРХУ */
+  }
+  .nav-cases .nav-home {
+    order: 0;  /* СРЕДИНА */
+  }
+  .nav-cases .nav-prev {
+    order: 1;  /* САМОЙ НИЗ */
+  }
+}
+
+
+@media (max-width: 700px) {
+  .case-cta,
+  .case-cta .container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 2rem 0.5rem !important;
+    box-sizing: border-box !important;
+    overflow-x: visible !important;
+  }
+  .case-cta h2 {
+    font-size: 1.4rem !important;           /* ↓↓↓ Основное отличие ↓↓↓ */
+    text-align: center !important;
+    word-break: break-word !important;
+    margin-bottom: 1.2rem !important;
+    max-width: 100% !important;
+    line-height: 1.2 !important;
+    padding: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+  .case-cta .btn {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1.1rem 0.5rem !important;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 700px) {
+  .collaboration-grid {
+    display: block !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .collaboration-item {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    margin-bottom: 1.2rem !important;
+    padding: 1.2rem 1rem !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+  }
+  .collaboration-item:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .case-cta {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    padding: 2rem 0.5rem !important;
+  }
+}
+
+@media (max-width: 700px) {
+  section.case-cta::before {
+    content: '';
+    display: block;
+    position: absolute !important;
+    z-index: 0 !important;
+    top: 0 !important;
+    left: 50% !important;
+    width: 100vw !important;
+    height: 100% !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    transform: translateX(-50%) !important;
+    background: #FFFFFF1A; /* или тот, что нужен! */
+    border-radius: 20px !important;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .results-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.2rem !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .result-card {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    padding: 1.2rem 1rem !important;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .case-conclusions-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.2rem !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .case-conclusion {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    position: relative !important;
+  }
+  .case-conclusion .conclusion-number {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.5rem !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    display: block !important;
+    text-align: center !important;
+    line-height: 1 !important;
+  }
+  .case-conclusion p {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+}
+
+
+
+/* -------------------------------------------------
+   alttt → Skills section: мобильная типографика
+--------------------------------------------------*/
+@media (max-width: 599px) {
+
+  /* сам блок */
+  .alttt-skills {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;       /* убираем «вылезание» из-за внутренних отступов */
+  }
+
+  /* заголовок */
+  .alttt-skills .section-title,
+  .alttt-skills .section-title.elegant-title {
+    font-size: 1.8rem;           /* вместо 3 rem → читаемо на 320-400 px */
+    line-height: 1.3;
+    max-width: 100%;
+    overflow-wrap: anywhere;     /* если слово слишком длинное — аккуратно перенесётся */
+    word-break: break-word;      /* дополнительная страховка от горизонтального скролла */
+    margin-bottom: 1.5rem;       /* чуть меньше, чтобы сохранить визуальный ритм */
+  }
+}
+
+
+@media (max-width: 800px) {
+  .case-navbar .nav-menu.active {
+    background: #18181a !important; /* Или #222, #000 — как на главной */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.16);
+    padding: 2rem 1rem 1.2rem 1rem;
+  }
+  .case-navbar .nav-menu.active .nav-link {
+    color: #fff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+}
+
+@media (max-width: 800px) {
+  .case-navbar .nav-menu.active .nav-link:active,
+  .case-navbar .nav-menu.active .nav-link:focus {
+    background: rgba(255,255,255,0.08) !important;
+    color: #fff !important;
+  }
+}
