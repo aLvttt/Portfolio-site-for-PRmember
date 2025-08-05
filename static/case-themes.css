@@ -5930,6 +5930,7 @@
     text-align: center;
     position: relative;
     z-index: 2;
+    
 }
 
 .media-plan-content p {
@@ -5939,7 +5940,7 @@
 }
 
 .media-plan-images {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
@@ -6409,7 +6410,7 @@
 
 .conclusions-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     justify-items: center;
     margin-top: 3rem;
@@ -6420,16 +6421,24 @@
 .conclusions-content .conclusion-item:nth-child(3) {
     grid-column: 1 / -1;
     justify-self: center;
-    max-width: 500px;
+    max-width: 400px;
 }
 
 .conclusion-item {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    text-align: center;
-    transition: all 0.3s ease;
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 40px #e40c4a10;
+    padding: 2.5rem 2rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 0;
+    word-break: break-word;
+    box-sizing: border-box;
 }
 
 .conclusion-item:hover {
@@ -6479,6 +6488,25 @@
     position: relative;
     z-index: 2;
 }
+
+.conclusions-grid__item {
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 40px #e40c4a10;
+    padding: 2.5rem 2rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 0;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+
+
 
 .case-conclusions-grid .case-conclusion:nth-child(7) {
     grid-column: 1 / -1;
@@ -7683,10 +7711,24 @@
 
 .conclusions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    justify-items: center;
 }
+
+.conclusions-section {
+    margin-top: 5rem;
+    max-width: 1100px;   /* Ограничивает ширину секции! */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;     /* Добавляет боковые отступы даже на больших экранах */
+    box-sizing: border-box;
+}
+
+
 
 .conclusions-grid .conclusion-item {
     background: rgba(255, 255, 255, 0.9);
@@ -7727,7 +7769,7 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
 }
@@ -7918,5 +7960,86 @@
 /* 3. alttt – блок "Целевая аудитория" */
 .alttt-target-audience .audience-segment h3,
 .alttt-target-audience .audience-segment p { color:#E11D48; }
+
+/* Фикс переполнения для блока медиаплана Structo */
+.structo-media-plan .container,
+.structo-media-plan .media-plan-content,
+.structo-media-plan .media-plan-images,
+.structo-media-plan .plan-image-item,
+.structo-media-plan .media-plan-link {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    word-break: break-word;
+}
+
+
+.structo-media-plan .media-plan-images {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.structo-media-plan .plan-image-item,
+.structo-media-plan .media-plan-link {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    .structo-media-plan .media-plan-link {
+        max-width: 98vw;
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
+}
+
+
+@media (min-width: 950px) {
+    .conclusions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 949px) {
+    .conclusions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .conclusions-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .conclusions-section {
+        padding: 0 6px;
+    }
+}
+
+
+.conclusions-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 10px !important;
+    max-width: 900px !important;
+}
+
+
+.conclusions-grid .conclusion-item:last-child:nth-child(odd) {
+    grid-column: 1 / 3;
+    justify-self: center;
+}
+
 
 
