@@ -2885,3 +2885,25 @@ body {
 }
 
 
+.contact-cta .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-cta .btn {
+    margin-top: 2rem;
+}
+
+/* Для мобильных — пусть кнопка растягивается по максимуму, но не больше 340px */
+@media (max-width: 600px) {
+    .contact-cta .btn {
+        width: 100%;
+        max-width: 340px;
+        margin: 2rem auto 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+}

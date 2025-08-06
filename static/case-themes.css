@@ -7137,6 +7137,7 @@
 .candlenur-conclusions .conclusions-content {
     max-width: 800px;
     margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .candlenur-conclusions .conclusion-item {
@@ -8378,3 +8379,5 @@
     color: #fff !important;
   }
 }
+
+
