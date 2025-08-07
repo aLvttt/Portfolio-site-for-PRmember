@@ -8381,3 +8381,7 @@
 }
 
 
+/* ---------- FIX: белый текст в карточках презентаций Structo ---------- */
+.structo-presentations .presentation-item p {
+    color: #ffffff !important;     /* высокий приоритет и контраст */
+}
